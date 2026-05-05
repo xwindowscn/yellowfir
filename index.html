@@ -1,163 +1,132 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.5">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yellowfir Group Limited</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin:0;
+            font-family:'Inter', sans-serif;
+            background:#0b1d1a;
+            color:#fff;
+        }
+        header {
+            position:fixed;
+            width:100%;
+            background:rgba(0,0,0,0.6);
+            padding:15px 50px;
+            z-index:1000;
+        }
+        header h1 {
+            display:inline;
+            color:#00d084;
+        }
+        nav {
+            float:right;
+        }
+        nav a {
+            color:#fff;
+            margin-left:20px;
+            text-decoration:none;
+        }
+        .hero {
+            height:100vh;
+            background:url('https://images.pexels.com/photos/433308/pexels-photo-433308.jpeg') center/cover;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+        }
+        .hero h2 {
+            font-size:50px;
+        }
+        .section {
+            padding:80px 60px;
+        }
+        h2 {
+            color:#00d084;
+        }
+        .grid {
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap:30px;
+        }
+        .card {
+            background:#122c28;
+            padding:20px;
+            border-radius:10px;
+        }
+        .stats {
+            display:flex;
+            justify-content:space-around;
+            text-align:center;
+        }
+        footer {
+            text-align:center;
+            padding:30px;
+            background:#000;
+        }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1">&lt;title&gt;Yellowfir Group Limited&lt;/title&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;style&gt;</p>
-<p class="p1">body {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin:0;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-family:'Inter', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background:#0b1d1a;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color:#fff;</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">header {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>position:fixed;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>width:100%;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background:rgba(0,0,0,0.6);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding:15px 50px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>z-index:1000;</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">header h1 {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display:inline;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color:#00d084;</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">nav {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>float:right;</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">nav a {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color:#fff;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin-left:20px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>text-decoration:none;</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">.hero {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>height:100vh;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background:url('https://images.pexels.com/photos/433308/pexels-photo-433308.jpeg') center/cover;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display:flex;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>align-items:center;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>justify-content:center;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>text-align:center;</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">.hero h2 {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-size:50px;</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">.section {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding:80px 60px;</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">h2 {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color:#00d084;</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">.grid {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display:grid;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>grid-template-columns: repeat(auto-fit,minmax(250px,1fr));</p>
-<p class="p1"><span class="Apple-converted-space">  </span>gap:30px;</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">.card {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background:#122c28;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding:20px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border-radius:10px;</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">.stats {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display:flex;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>justify-content:space-around;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>text-align:center;</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">footer {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>text-align:center;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding:30px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background:#000;</p>
-<p class="p1">}</p>
-<p class="p1">&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Yellowfir&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#about"&gt;About&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#business"&gt;Business&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#projects"&gt;Projects&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#contact"&gt;Contact&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/nav&gt;</p>
-<p class="p1">&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="hero"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Green Energy, Lighting up the Future&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Leading Renewable Energy Developer in Central Asia&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section id="about" class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;About Us&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;Yellowfir Group Limited is a Hong Kong registered company specializing in renewable energy development, investment, and services.&lt;/p&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section id="business" class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;Core Business&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card"&gt;Renewable Energy Development&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card"&gt;Investment &amp; Consulting&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card"&gt;Industrial Investment&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card"&gt;Financial Management&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section id="projects" class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;Key Projects&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;600MW PV Project – Batken, Kyrgyzstan&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;2GW Green Energy Industrial Park&lt;/p&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;Our Impact&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="stats"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div&gt;&lt;b&gt;2GW&lt;/b&gt;&lt;br&gt;Planned Capacity&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div&gt;&lt;b&gt;600MW&lt;/b&gt;&lt;br&gt;Developed&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div&gt;&lt;b&gt;3B kWh&lt;/b&gt;&lt;br&gt;Annual Output&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section id="contact" class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;Contact&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;Email: yellowfir@yellowfir.com&lt;/p&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>© 2026 Yellowfir Group Limited</p>
-<p class="p1">&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+    <header>
+        <h1>Yellowfir</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#business">Business</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h2>Green Energy, Lighting up the Future</h2>
+            <p>Leading Renewable Energy Developer in Central Asia</p>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>Yellowfir Group Limited is a Hong Kong registered company specializing in renewable energy development, investment, and services.</p>
+    </section>
+
+    <section id="business" class="section">
+        <h2>Core Business</h2>
+        <div class="grid">
+            <div class="card">Renewable Energy Development</div>
+            <div class="card">Investment & Consulting</div>
+            <div class="card">Industrial Investment</div>
+            <div class="card">Financial Management</div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Key Projects</h2>
+        <p>600MW PV Project – Batken, Kyrgyzstan</p>
+        <p>2GW Green Energy Industrial Park</p>
+    </section>
+
+    <section class="section">
+        <h2>Our Impact</h2>
+        <div class="stats">
+            <div><b>2GW</b><br>Planned Capacity</div>
+            <div><b>600MW</b><br>Developed</div>
+            <div><b>3B kWh</b><br>Annual Output</div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>Email: yellowfir@yellowfir.com</p>
+    </section>
+
+    <footer>
+        © 2026 Yellowfir Group Limited
+    </footer>
+
 </body>
 </html>
