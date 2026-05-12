@@ -124,21 +124,21 @@
         }
 
         .hero-art-text {
-            max-width: 42%;
-            margin: 0 5% 7% 0;
+            max-width: 70%;
+            margin: 0 6% 10% 0;
             text-align: right;
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
             background: rgba(0, 25, 22, 0.55);
-            padding: 1.2rem 1.5rem;
-            border-radius: 22px;
+            padding: 2rem 2.5rem;
+            border-radius: 36px;
             border-right: 5px solid #00d084;
             border-bottom: 2px solid rgba(0,208,132,0.5);
             animation: fadeSlideUp 0.9s ease-out;
         }
 
         .hero-art-text h2 {
-            font-size: clamp(1.6rem, 4.2vw, 3rem);
+            font-size: clamp(1.95rem, 5.25vw, 3.75rem);
             font-weight: 800;
             background: linear-gradient(130deg, #FFFFFF, #c3ffe6, #00d084);
             background-size: 200% auto;
@@ -147,11 +147,11 @@
             color: transparent;
             text-shadow: 0 2px 15px rgba(0,0,0,0.2);
             letter-spacing: -0.02em;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
         }
 
         .hero-art-text p {
-            font-size: clamp(0.65rem, 1.8vw, 0.85rem);
+            font-size: clamp(0.75rem, 2.25vw, 1.05rem);
             font-weight: 500;
             color: #e2fef0;
             letter-spacing: 0.5px;
@@ -342,13 +342,13 @@
             nav a { font-size: 0.72rem; padding: 6px 3px; }
             .hero { min-height: 420px; background-position: center 80%; }
             .hero-art-text {
-                margin: 0 3% 6% 0;
-                max-width: 40%;
-                padding: 0.5rem 0.7rem;
-                border-radius: 14px;
+                margin: 0 3% 10% 0;
+                max-width: 88%;
+                padding: 0.7rem 1rem;
+                border-radius: 18px;
             }
-            .hero-art-text h2 { font-size: 1.1rem; margin-bottom: 0.2rem; }
-            .hero-art-text p { font-size: 0.45rem; }
+            .hero-art-text h2 { font-size: 1.5rem; }
+            .hero-art-text p:last-child { display: none; }
             .stats { gap: 1.2rem; padding: 1.2rem; }
             .stat-number { font-size: 2rem; }
             .contact-flex { flex-direction: column; padding: 1.2rem; }
@@ -380,14 +380,14 @@
                 min-height: 460px;
             }
             .hero-art-text {
-                margin: 0 4% 8% 0;
-                max-width: 44%;
-                padding: 0.6rem 0.9rem;
-                border-radius: 18px;
+                margin: 0 4% 12% 0;
+                max-width: 75%;
+                padding: 0.9rem 1.1rem;
+                border-radius: 22px;
             }
-            .hero-art-text h2 { font-size: 1.3rem; margin-bottom: 0.3rem; }
-            .hero-art-text p { font-size: 0.5rem; letter-spacing: 0.3px; }
-            .hero-art-text p:last-child { display: none; }
+            .hero-art-text h2 { font-size: 1.7rem; margin-bottom: 0.5rem; }
+            .hero-art-text p { font-size: 0.82rem; letter-spacing: 0.5px; }
+            .hero-art-text p:last-child { font-size: 0.75rem; }
             .section { padding: 2.5rem 5%; }
             h2.section-title { font-size: 1.8rem; }
             h3.section-title { font-size: 1.5rem; }
@@ -512,6 +512,7 @@
         }
         .contact-item .label {
             font-size: 0.9rem;
+            min-width: 0;
         }
         .contact-item a,
         .contact-item span {
