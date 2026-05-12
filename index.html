@@ -124,21 +124,21 @@
         }
 
         .hero-art-text {
-            max-width: 70%;
-            margin: 0 6% 10% 0;
+            max-width: 42%;
+            margin: 0 5% 7% 0;
             text-align: right;
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
             background: rgba(0, 25, 22, 0.55);
-            padding: 2rem 2.5rem;
-            border-radius: 36px;
+            padding: 1.2rem 1.5rem;
+            border-radius: 22px;
             border-right: 5px solid #00d084;
             border-bottom: 2px solid rgba(0,208,132,0.5);
             animation: fadeSlideUp 0.9s ease-out;
         }
 
         .hero-art-text h2 {
-            font-size: clamp(2.6rem, 7vw, 5rem);
+            font-size: clamp(1.6rem, 4.2vw, 3rem);
             font-weight: 800;
             background: linear-gradient(130deg, #FFFFFF, #c3ffe6, #00d084);
             background-size: 200% auto;
@@ -147,14 +147,14 @@
             color: transparent;
             text-shadow: 0 2px 15px rgba(0,0,0,0.2);
             letter-spacing: -0.02em;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
 
         .hero-art-text p {
-            font-size: clamp(1rem, 3vw, 1.4rem);
+            font-size: clamp(0.65rem, 1.8vw, 0.85rem);
             font-weight: 500;
             color: #e2fef0;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         @keyframes fadeSlideUp {
@@ -342,13 +342,13 @@
             nav a { font-size: 0.72rem; padding: 6px 3px; }
             .hero { min-height: 420px; background-position: center 80%; }
             .hero-art-text {
-                margin: 0 3% 10% 0;
-                max-width: 88%;
-                padding: 0.7rem 1rem;
-                border-radius: 18px;
+                margin: 0 3% 6% 0;
+                max-width: 40%;
+                padding: 0.5rem 0.7rem;
+                border-radius: 14px;
             }
-            .hero-art-text h2 { font-size: 1.5rem; }
-            .hero-art-text p:last-child { display: none; }
+            .hero-art-text h2 { font-size: 1.1rem; margin-bottom: 0.2rem; }
+            .hero-art-text p { font-size: 0.45rem; }
             .stats { gap: 1.2rem; padding: 1.2rem; }
             .stat-number { font-size: 2rem; }
             .contact-flex { flex-direction: column; padding: 1.2rem; }
@@ -380,14 +380,14 @@
                 min-height: 460px;
             }
             .hero-art-text {
-                margin: 0 4% 12% 0;
-                max-width: 75%;
-                padding: 0.9rem 1.1rem;
-                border-radius: 22px;
+                margin: 0 4% 8% 0;
+                max-width: 44%;
+                padding: 0.6rem 0.9rem;
+                border-radius: 18px;
             }
-            .hero-art-text h2 { font-size: 1.7rem; }
-            .hero-art-text p { font-size: 0.82rem; }
-            .hero-art-text p:last-child { font-size: 0.75rem; }
+            .hero-art-text h2 { font-size: 1.3rem; margin-bottom: 0.3rem; }
+            .hero-art-text p { font-size: 0.5rem; letter-spacing: 0.3px; }
+            .hero-art-text p:last-child { display: none; }
             .section { padding: 2.5rem 5%; }
             h2.section-title { font-size: 1.8rem; }
             h3.section-title { font-size: 1.5rem; }
@@ -496,6 +496,27 @@
         .contact-flex a[target="_blank"] {
             padding: 8px 8px 8px 0;
             display: inline-block;
+        }
+
+        /* 联系方式内项目在手机上自动换行 */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+        .contact-item i {
+            flex-shrink: 0;
+        }
+        .contact-item .label {
+            font-size: 0.9rem;
+        }
+        .contact-item a,
+        .contact-item span {
+            word-break: break-all;
+            overflow-wrap: break-word;
         }
     </style>
 </head>
@@ -685,21 +706,31 @@
 <section id="contact" class="section section-alt">
     <h2 class="section-title">联络 · Contact</h2>
     <div class="contact-flex">
-        <div style="flex:1">
-             <i class="fas fa-globe"></i>
-            <span>Website:</span>
-            <a href="https://www.yellowfir.com" style="color: rgb(211, 222, 58);">www.yellowfir.com</a>
-            <p>&nbsp;</p>
-            <i class="fas fa-envelope" style="font-size: 1.8rem; color:#00d084;"></i>
-            <span style="margin-top: 8px;"><strong>  &nbsp;&nbsp; </strong> yellowfir@yellowfir.com</span>
-            <p>&nbsp;</p>
-            <p><i class="fas fa-map-marker-alt"></i> <strong>香港总部 · Hong Kong headquarters：</strong> Unit 421, 4/F, Beverley Commercial Center, No.87-105 Chatham Road South, Tsim Sha Tsui, Hong Kong</p>
+        <div style="flex:1; min-width: 0;">
+            <div class="contact-item">
+                <i class="fas fa-globe" style="font-size: 1.4rem; color:#00d084;"></i>
+                <span class="label">Website:</span>
+                <a href="https://www.yellowfir.com" style="color: rgb(211, 222, 58);">www.yellowfir.com</a>
+            </div>
+            <div style="height: 12px;"></div>
+            <div class="contact-item">
+                <i class="fas fa-envelope" style="font-size: 1.4rem; color:#00d084;"></i>
+                <span class="label"><strong>yellowfir@yellowfir.com</strong></span>
+            </div>
+            <div style="height: 12px;"></div>
+            <div class="contact-item" style="align-items: flex-start;">
+                <i class="fas fa-map-marker-alt" style="font-size: 1.4rem; color:#00d084; margin-top: 2px;"></i>
+                <div>
+                    <strong>香港总部 · Hong Kong headquarters：</strong><br>
+                    Unit 421, 4/F, Beverley Commercial Center, No.87-105 Chatham Road South, Tsim Sha Tsui, Hong Kong
+                </div>
+            </div>
         </div>
-        <div style="flex:1; border-left: 1px solid #2c5b52; padding-left: 1.5rem;">
-            <p>&nbsp;</p>
-            <p><strong>业务咨询 · Service Inquiries：</strong> yellowfir@yellowfir.com</p>
-            <p>&nbsp;</p>
-            <p><strong>职业 · Career：</strong> yellowfir@yellowfir.com</p>
+        <div style="flex:1; min-width: 0; border-left: 1px solid #2c5b52; padding-left: 1.5rem;">
+            <div style="height: 4px;"></div>
+            <p style="word-break: break-word;"><strong>业务咨询 · Service Inquiries：</strong><br>yellowfir@yellowfir.com</p>
+            <div style="height: 16px;"></div>
+            <p style="word-break: break-word;"><strong>职业 · Career：</strong><br>yellowfir@yellowfir.com</p>
             <div style="margin-top: 20px;">
                 <a href="https://www.linkedin.com/in/yellowfir" target="_blank" rel="noopener noreferrer" style="text-decoration: none; display: inline-block;">
                     <i class="fab fa-linkedin" style="font-size: 1.8rem; margin-right: 18px; cursor: pointer; opacity:0.8; color: #eef5f2;"></i>
