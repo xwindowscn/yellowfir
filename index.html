@@ -19,6 +19,8 @@
             color: #eef5f2;
             scroll-behavior: smooth;
             overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            -webkit-tap-highlight-color: rgba(0, 208, 132, 0.2);
         }
 
         ::-webkit-scrollbar {
@@ -36,14 +38,15 @@
         header {
             position: fixed;
             width: 100%;
-            background: rgba(21, 4, 4, 0.75);
+            background: rgba(21, 4, 4, 0.85);
             backdrop-filter: blur(14px);
-            padding: 0 5%;
+            -webkit-backdrop-filter: blur(14px);
+            padding: 0 4%;
             z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             border-bottom: 1px solid rgba(0, 208, 132, 0.4);
             transition: all 0.2s;
         }
@@ -51,26 +54,35 @@
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 14px;
-            padding: 8px 0;
+            gap: 10px;
+            padding: 6px 0;
+            min-width: 0;
+            flex-shrink: 1;
+            overflow: hidden;
         }
 
         /* 使用真正的image.png logo */
         .logo-img {
-            height: 56px;
+            height: 44px;
             width: auto;
+            flex-shrink: 0;
             filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
             transition: transform 0.2s;
-            border-radius: 8px;
+            border-radius: 6px;
         }
         .logo-img:hover {
             transform: scale(1.02);
         }
 
         .brand-name {
-            font-size: 1.25rem;
+            font-size: 1rem;
             font-weight: 600;
-            letter-spacing: 1px;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-shrink: 1;
+            min-width: 0;
             background: linear-gradient(135deg, #00d084, #b3ffda);
             -webkit-background-clip: text;
             background-clip: text;
@@ -79,18 +91,20 @@
 
         nav {
             display: flex;
-            gap: 28px;
+            gap: 16px;
+            flex-shrink: 0;
         }
         nav a {
             color: #f0faf7;
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             transition: 0.2s;
             border-bottom: 2px solid transparent;
-            padding-bottom: 4px;
+            padding: 4px 2px;
+            white-space: nowrap;
         }
-        nav a:hover {
+        nav a:hover, nav a:active {
             color: #00d084;
             border-bottom-color: #00d084;
         }
@@ -99,8 +113,10 @@
         .hero {
             position: relative;
             height: 100vh;
-            background: linear-gradient(115deg, rgba(0,0,0,0.2) 0%, rgba(0,40,30,0.3) 100%), 
-            url('https://github.com/xwindowscn/yellowfir/blob/main/%E9%A3%8E%E7%94%B5%E5%85%89%E4%BC%8F%E7%94%B5%E7%AB%992.jpg?raw=true') center/cover fixed;
+            min-height: 500px;
+            background: linear-gradient(115deg, rgba(0,0,0,0.2) 0%, rgba(0,40,30,0.3) 100%),
+            url('https://github.com/xwindowscn/yellowfir/blob/main/%E9%A3%8E%E7%94%B5%E5%85%89%E4%BC%8F%E7%94%B5%E7%AB%992.jpg?raw=true') center/cover;
+            background-attachment: fixed;
             display: flex;
             align-items: flex-end;
             justify-content: flex-end;
@@ -109,9 +125,10 @@
 
         .hero-art-text {
             max-width: 70%;
-            margin: 0 8% 12% 0;
+            margin: 0 6% 10% 0;
             text-align: right;
             backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
             background: rgba(0, 25, 22, 0.55);
             padding: 2rem 2.5rem;
             border-radius: 36px;
@@ -307,25 +324,107 @@
             text-align: center;
             font-size: 0.85rem;
         }
+        /* ===== 移动端适配 ===== */
+
+        /* iOS Safari 不支持 background-attachment: fixed */
+        @supports (-webkit-touch-callout: none) {
+            .hero {
+                background-attachment: scroll;
+            }
+        }
+
+        /* 极小屏 — 窄手机 (<400px) */
+        @media (max-width: 399px) {
+            header { padding: 0 3%; }
+            .logo-img { height: 36px; }
+            .brand-name { font-size: 0.75rem; letter-spacing: 0; }
+            nav { gap: 10px; }
+            nav a { font-size: 0.72rem; padding: 6px 3px; }
+            .hero { min-height: 420px; }
+            .hero-art-text {
+                margin: 0 4% 20% 0;
+                max-width: 92%;
+                padding: 1rem 1.2rem;
+                border-radius: 24px;
+            }
+            .hero-art-text h2 { font-size: 1.8rem; }
+            .grid-4 { grid-template-columns: 1fr; gap: 1.2rem; }
+            .stats { gap: 1.2rem; padding: 1.2rem; }
+            .stat-number { font-size: 2rem; }
+            .contact-flex { flex-direction: column; padding: 1.2rem; }
+            .contact-flex > div:last-child {
+                border-left: none !important;
+                padding-left: 0 !important;
+                padding-top: 1rem;
+                border-top: 1px solid #2c5b52;
+            }
+            .cta-final .logo-img { height: 120px !important; }
+            h2.section-title { font-size: 1.5rem; }
+            h3.section-title { font-size: 1.3rem; }
+        }
+
         @media (max-width: 768px) {
             header {
-                flex-direction: column;
-                padding: 10px 20px;
-            }
-            nav {
-                margin-top: 8px;
-                gap: 18px;
+                padding: 0 4%;
                 flex-wrap: wrap;
-                justify-content: center;
+            }
+            .logo-img { height: 38px; }
+            .brand-name { font-size: 0.82rem; max-width: 45vw; }
+            nav { gap: 14px; }
+            nav a { font-size: 0.78rem; padding: 8px 4px; }
+            /* 导航图标在极窄时隐藏文字保留图标 */
+            nav a i { margin-right: 0; }
+            .hero {
+                background-attachment: scroll;
+                min-height: 460px;
             }
             .hero-art-text {
-                margin: 0 5% 15% 0;
-                max-width: 88%;
-                padding: 1.2rem 1.8rem;
+                margin: 0 5% 18% 0;
+                max-width: 85%;
+                padding: 1.2rem 1.5rem;
+                border-radius: 28px;
             }
-            .section {
-                padding: 3rem 5%;
+            .hero-art-text h2 { font-size: 2.2rem; }
+            .hero-art-text p { font-size: 0.95rem; }
+            .section { padding: 2.5rem 5%; }
+            h2.section-title { font-size: 1.8rem; }
+            h3.section-title { font-size: 1.5rem; }
+            .grid-4 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; }
+            .card-content { padding: 1.2rem 1rem 1.4rem; }
+            .card-content h3 { font-size: 1.3rem; }
+            .projects-showcase { flex-direction: column; gap: 1.2rem; }
+            .project-item { padding: 1.2rem; }
+            .stats { flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; padding: 1.5rem; border-radius: 32px; }
+            .stat-number { font-size: 2.2rem; }
+            .profile-rich { flex-direction: column; padding: 1.2rem; border-radius: 28px; }
+            .about-bilingual { flex-direction: column; }
+            .about-cn, .about-en { min-width: 0; }
+            .contact-flex { flex-direction: column; padding: 1.2rem; border-radius: 24px; }
+            .contact-flex > div:last-child {
+                border-left: none !important;
+                padding-left: 0 !important;
+                padding-top: 1.2rem;
+                border-top: 1px solid #2c5b52;
             }
+            .cta-final { margin: 3rem auto 0; }
+            .cta-final .logo-img { height: 140px !important; }
+            footer.site { margin-top: 3rem; padding: 2rem 1rem; }
+        }
+
+        /* 平板和小屏桌面 (769-1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero-art-text { max-width: 75%; margin: 0 6% 14% 0; }
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .projects-showcase { gap: 1.2rem; }
+            .stats { gap: 1.2rem; }
+            .brand-name { font-size: 1.05rem; }
+            nav { gap: 18px; }
+        }
+
+        /* 大屏优化 (1025px+) */
+        @media (min-width: 1025px) {
+            .section { padding: 5rem 8%; }
+            .grid-4 { grid-template-columns: repeat(4, 1fr); }
         }
 
             /* 中英文双栏布局 */
@@ -362,23 +461,40 @@
             }
 
 
-         /* CTA */
-        .cta-final{text-align:center;max-width:70rem;margin:7rem auto 0;padding:0 1.5rem}
-        .cta-final h2{font-size:clamp(2.5rem,5vw,4rem)}
-        .cta-final h3{font-size:clamp(2rem,4vw,3rem)}
-        .cta-final p{margin-top:1.5rem;color:var(--muted)}
-        .cta-final .btn{margin-top:2.5rem;padding:1rem 2rem}
+        /* CTA */
         .cta-final {
-                text-align: center;     /* 让内部的文字和按钮居中 */
-                width: 100%;           /* 占满父容器宽度 */
-                margin: 0 auto;        /* 左右外边距自动，实现居中 */
-                clear: both;           /* 清除浮动影响，确保不被其他元素干扰 */
+            text-align: center;
+            max-width: 70rem;
+            margin: 7rem auto 0;
+            padding: 0 1.5rem;
+            width: 100%;
+        }
+        .cta-final h2 { font-size: clamp(2.2rem, 5vw, 4rem); }
+        .cta-final h3 { font-size: clamp(1.6rem, 4vw, 3rem); }
+        .cta-final p { margin-top: 1.5rem; color: #cfede6; }
+        .cta-final .logo-img {
+            max-width: 90vw;
+            height: auto !important;
+            max-height: 200px;
         }
 
         /* Footer */
-        footer.site{margin-top:6rem;border-top:1px solid var(--border);padding:3rem 0 2rem;text-align:center;color:var(--muted);font-size:.875rem}
-        footer .brand{justify-content:center;margin-bottom:1rem}
-        footer .meta{font-size:.75rem;margin-top:.5rem;opacity:.8}
+        footer.site {
+            margin-top: 6rem;
+            border-top: 1px solid #2c5b52;
+            padding: 3rem 1rem 2rem;
+            text-align: center;
+            color: #b0ccc6;
+            font-size: 0.875rem;
+        }
+        footer .brand { justify-content: center; margin-bottom: 1rem; }
+        footer .meta { font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.8; }
+
+        /* 社交图标 touch target 增大 */
+        .contact-flex a[target="_blank"] {
+            padding: 8px 8px 8px 0;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -561,7 +677,6 @@
     <h3><span class="italic text-gradient">Lighting </span>The Next 10 Years Together</h3>
     <p>无论您是寻求投资机会、跨境合作伙伴，还是希望布局绿色能源未来，Yellowfir 期待与您同行。<br/><em>Whether you seek investment opportunities, cross-border partners, or a place in the green-energy future, Yellowfir walks with you.</em></p>
 </section>
-</main>
 
 
 <!-- 联系方式 -->
