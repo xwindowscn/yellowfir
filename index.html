@@ -15,13 +15,12 @@
 
         body {
             font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
-            background: linear-gradient(rgba(6, 16, 18, 0.88), rgba(4, 12, 14, 0.92));
+            background: #0a1a1a;
             color: #eef5f2;
             scroll-behavior: smooth;
             overflow-x: hidden;
             -webkit-overflow-scrolling: touch;
             -webkit-tap-highlight-color: rgba(0, 208, 132, 0.2);
-            position: relative;
         }
         body::before {
             content: '';
@@ -30,7 +29,9 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: url('https://github.com/xwindowscn/yellowfir/blob/main/%E9%A3%8E%E7%94%B5%E5%85%89%E4%BC%8F%E7%94%B5%E7%AB%992.jpg?raw=true') center 75% / cover;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.65)),
+                url('https://github.com/xwindowscn/yellowfir/blob/main/%E9%A3%8E%E7%94%B5%E5%85%89%E4%BC%8F%E7%94%B5%E7%AB%992.jpg?raw=true') center 75% / cover;
             pointer-events: none;
         }
 
@@ -383,7 +384,7 @@
 
         @media (max-width: 768px) {
             body {
-                background: linear-gradient(rgba(6, 16, 18, 0.7), rgba(4, 12, 14, 0.75));
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.65));
             }
             body::before {
                 background-position: left center;
