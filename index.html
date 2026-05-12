@@ -301,6 +301,9 @@
             line-height: 1.5;
             color: #cfede6;
         }
+        .card-content p:first-of-type {
+            margin-bottom: 0.8rem;
+        }
         .icon-tag {
             font-size: 1.8rem;
             color: #00d084;
@@ -323,6 +326,10 @@
             border-radius: 30px;
             border-left: 5px solid #00d084;
         }
+        .project-item p:last-of-type,
+        .serv-card p:last-of-type {
+            margin-top: 0.8rem;
+        }
         .stats {
             display: flex;
             flex-wrap: wrap;
@@ -332,6 +339,9 @@
             backdrop-filter: blur(2px);
             -webkit-backdrop-filter: blur(2px);
             padding: 2rem;
+            border-radius: 48px;
+            margin-top: 2rem;
+        }
             border-radius: 48px;
             margin-top: 2rem;
         }
@@ -743,21 +753,21 @@
 <section class="section">
     <h2 class="section-title">专业服务优势  Professional Service Advantage</h2>
     <div style="display: flex; flex-wrap: wrap; gap: 1.8rem; justify-content: space-between;">
-        <div style="flex:1; background: rgba(10, 24, 22, 0.45); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); border-radius: 28px; padding: 1.5rem;">
+        <div class="serv-card" style="flex:1; background: rgba(10, 24, 22, 0.45); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); border-radius: 28px; padding: 1.5rem;">
             <i class="fas fa-chart-pie" style="font-size: 2rem; color:#00d084;"></i>
             <h3 style="margin: 1rem 0 0.5rem;">战略投资全案</h3>
             <h3 style="margin: 1rem 0 0.5rem;">Strategic Investment Solutions</h3>
             <p style="text-align: justify;">行业分析、交易架构、跨境并购及绿地投资风险管理，确保复杂交易高效落地。</p>
             <p style="text-align: justify;">Industry analysis, transaction structuring, cross-border M&A, and greenfield investment risk management, ensuring efficient execution of complex deals.</p>
         </div>
-        <div style="flex:1; background: rgba(10, 24, 22, 0.45); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); border-radius: 28px; padding: 1.5rem;">
+        <div class="serv-card" style="flex:1; background: rgba(10, 24, 22, 0.45); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); border-radius: 28px; padding: 1.5rem;">
             <i class="fas fa-file-invoice-dollar" style="font-size: 2rem; color:#00d084;"></i>
             <h3 style="margin: 1rem 0 0.5rem;">国际财税筹划</h3>
             <h3 style="margin: 1rem 0 0.5rem;">International Tax Planning</h3>
             <p style="text-align: justify;">离岸架构、双边税收协定应用、转移定价及合规咨询，提升投资收益。</p>
             <p style="text-align: justify;">Offshore structuring, application of bilateral tax treaties, transfer pricing, and compliance consulting to enhance investment returns.</p>
         </div>
-        <div style="flex:1; background: rgba(10, 24, 22, 0.45); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); border-radius: 28px; padding: 1.5rem;">
+        <div class="serv-card" style="flex:1; background: rgba(10, 24, 22, 0.45); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); border-radius: 28px; padding: 1.5rem;">
             <i class="fas fa-globe" style="font-size: 2rem; color:#00d084;"></i>
             <h3 style="margin: 1rem 0 0.5rem;">全球身份规划</h3>
             <h3 style="margin: 1rem 0 0.5rem;">Global Identity Planning</h3>
