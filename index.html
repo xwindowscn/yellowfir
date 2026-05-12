@@ -356,8 +356,8 @@
             header { padding: 0 3%; }
             .logo-img { height: 36px; }
             .brand-name { font-size: 0.75rem; letter-spacing: 0; }
-            nav { gap: 6px; flex-wrap: wrap; justify-content: center; }
-            nav a { font-size: 0.65rem; padding: 6px 3px; }
+            nav { gap: 3px; justify-content: center; }
+            nav a { font-size: clamp(0.42rem, 1.8vw, 0.65rem); padding: 6px 2px; }
             .hero { min-height: 420px; background-position: center 80%; }
             .hero-art-text {
                 margin: 0 3% 10% 0;
@@ -394,12 +394,11 @@
             header {
                 padding: 0 4%;
                 flex-wrap: wrap;
-                overflow: hidden;
             }
             .logo-img { height: 38px; }
-            .brand-name { font-size: 0.82rem; max-width: 45vw; }
-            nav { gap: 6px; flex-wrap: wrap; justify-content: center; flex-shrink: 1; width: 100%; }
-            nav a { font-size: 0.72rem; padding: 6px 4px; }
+            .brand-name { font-size: 0.82rem; max-width: none; white-space: normal; overflow: visible; text-overflow: clip; }
+            nav { gap: 4px; justify-content: center; flex-shrink: 1; width: 100%; }
+            nav a { font-size: clamp(0.48rem, 2.4vw, 0.72rem); padding: 6px 3px; }
             nav a i { margin-right: 0; }
             .hero {
                 background: url('https://github.com/xwindowscn/yellowfir/blob/main/%E9%A3%8E%E7%94%B5%E5%85%89%E4%BC%8F%E7%94%B5%E7%AB%992.jpg?raw=true') center 80% / cover;
