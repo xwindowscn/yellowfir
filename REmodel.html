@@ -2283,17 +2283,37 @@ function dlAll() {
     allTabs.forEach(([id, name]) => {
       const wrap = document.getElementById(id);
       const tables = wrap && wrap.querySelectorAll('table');
-      if (tables && tables.length) {
-        tables.forEach((t, i) => {
-          if (t.rows.length > 1) {
-            try {
-              const ws = XLSX.utils.table_to_sheet(t, { raw: true });
-              const sheetName = tables.length > 1 ? name + (i+1) : name;
-              XLSX.utils.book_append_sheet(wb, ws, sheetName);
-            } catch(e) { console.warn('Skip sheet '+name+(i+1), e); }
+      if (!tables || !tables.length) return;
+
+      // Merge ALL tables in one wrap into a single sheet (important for tabDecision's 2 tables)
+      try {
+        let combined = null;
+        tables.forEach((t, ti) => {
+          if (t.rows.length <= 1) return;
+          const ws = XLSX.utils.table_to_sheet(t, { raw: true });
+          if (ti === 0) { combined = ws; return; }
+          // Append subsequent tables below with a blank row gap
+          const refPrev = XLSX.utils.decode_range(combined['!ref'] || 'A1');
+          const gapRow = refPrev.e.r + 2;
+          const refT = XLSX.utils.decode_range(ws['!ref'] || 'A1');
+          let maxCol = refPrev.e.c;
+          for (let R = refT.s.r; R <= refT.e.r; R++) {
+            for (let C = refT.s.c; C <= refT.e.c; C++) {
+              const addr = XLSX.utils.encode_cell({ r: R, c: C });
+              if (ws[addr]) {
+                const dst = XLSX.utils.encode_cell({ r: R + gapRow, c: C });
+                combined[dst] = ws[addr];
+              }
+            }
+            if (refT.e.c > maxCol) maxCol = refT.e.c;
           }
+          combined['!ref'] = XLSX.utils.encode_range({
+            s: { r: 0, c: 0 },
+            e: { r: refT.e.r + gapRow, c: maxCol }
+          });
         });
-      }
+        if (combined) XLSX.utils.book_append_sheet(wb, combined, name);
+      } catch(e) { console.warn('Skip sheet '+name, e); }
     });
 
     // LCOE calculation detail
