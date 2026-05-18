@@ -2207,130 +2207,80 @@ function dlTable(wrapId, sheetName) {
   setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
 }
 
-// ====== Download parameters as Excel ======
-function dlParams() {
-  const params = [
-    ['参数类别', '参数名称', '数值', '单位'],
-    ['工程概况','项目类型',document.getElementById('p_projType').options[document.getElementById('p_projType').selectedIndex].text,''],
-    ['工程概况','项目名称',document.getElementById('p_projectName').value,''],
-    ['工程概况','AC容量(10K kW)',document.getElementById('p_acCap').value,'10K kW'],
-    ['工程概况','DC容量(10K kW)',document.getElementById('p_dcCap').value,'10K kW'],
-    ['工程概况','单位造价(CNY/W)',document.getElementById('p_unitCost').value,'CNY/W'],
-    ['工程概况','建设期(年)',document.getElementById('p_constructPeriod').value,'年'],
-    ['工程概况','运营期(年)',document.getElementById('p_operPeriod').value,'年'],
-    ['工程概况','首年利用小时',document.getElementById('p_firstYearHours').value,'h'],
-    ['工程概况','保障利用小时(政策)',document.getElementById('p_guaranteedHoursPolicy').value,'h'],
-    ['工程概况','保障实际利用小时',document.getElementById('p_actualGuaranteedHours').value,'h'],
-    ['工程概况','过网费',document.getElementById('p_gridFee').value,'CNY/kWh'],
-    ['工程概况','辅助服务费',document.getElementById('p_ancillaryFee').value,'CNY/kWh'],
-    ['工程概况','线损率',document.getElementById('p_lineLoss').value,'%'],
-    ['电价参数','批复电价',document.getElementById('p_approvedTariff').value,'CNY/kWh'],
-    ['电价参数','标杆电价',document.getElementById('p_benchmarkTariff').value,'CNY/kWh'],
-    ['电价参数','补贴电价',document.getElementById('p_subsidyPrice').value,'CNY/kWh'],
-    ['电价参数','补贴年限',document.getElementById('p_subsidyYears').value,'年'],
-    ['电价参数','保障折扣',document.getElementById('p_guaranteeDiscount').value,'%'],
-    ['电价参数','市场交易电价',document.getElementById('p_marketPrice').value,'CNY/kWh'],
-    ['电价参数','超发电价',document.getElementById('p_overgenPrice').value,'CNY/kWh'],
-    ['电价参数','储能电价',document.getElementById('p_storageElecPrice').value,'CNY/kWh'],
-    ['电价参数','电价含税',document.getElementById('p_tariffInclTax').options[document.getElementById('p_tariffInclTax').selectedIndex].text,''],
-    ['储能参数','电池类型',document.getElementById('p_batteryType').options[document.getElementById('p_batteryType').selectedIndex].text,''],
-    ['储能参数','配置比例',document.getElementById('p_storageRatio').value,'%'],
-    ['储能参数','配置时长',document.getElementById('p_storageDuration').value,'小时'],
-    ['储能参数','储能初始单价',document.getElementById('p_storageUnitPrice').value,'CNY/Wh'],
-    ['储能参数','年运行天数',document.getElementById('p_storageDays').value,'天/年'],
-    ['储能参数','可利用小时',document.getElementById('p_storageUsableHours').value,'h'],
-    ['储能参数','充放效率',document.getElementById('p_storageEfficiency').value,'%'],
-    ['储能参数','容量租赁比例',document.getElementById('p_storageLeaseRatio').value,'%'],
-    ['储能参数','电芯更换次数',document.getElementById('p_batteryReplaceTimes').value,'次'],
-    ['储能参数','更换成本(CNY/Wh)',document.getElementById('p_replaceCost').value,'CNY/Wh'],
-    ['运维参数','运维模式',document.getElementById('p_omMode').options[document.getElementById('p_omMode').selectedIndex].text,''],
-    ['运维参数','成本方式',document.getElementById('p_costMethod').options[document.getElementById('p_costMethod').selectedIndex].text,''],
-    ['运维参数','自运维定员/50MW',document.getElementById('p_selfHeadcount').value,'人'],
-    ['运维参数','外包定员/50MW',document.getElementById('p_outsourceHeadcount').value,'人'],
-    ['运维参数','人均年薪',document.getElementById('p_avgSalary').value,'10K CNY'],
-    ['运维参数','福利费率',document.getElementById('p_benefitsRate').value,'%'],
-    ['运维参数','保修年限',document.getElementById('p_warrantyYears').value,'年'],
-    ['土地补偿','占地面积',document.getElementById('p_landArea').value,'公顷'],
-    ['土地补偿','年租金',document.getElementById('p_annualRent').value,'USD/公顷'],
-    ['土地补偿','汇率',document.getElementById('p_exchangeRate').value,'USD/CNY'],
-    ['土地补偿','征地补偿',document.getElementById('p_landCompensation').value,'USD/公顷'],
-    ['运维参数','土地税计税基础',document.getElementById('p_landTaxBase').value,'CNY/平米'],
-    ['运维参数','土地税率',document.getElementById('p_landTaxRate').value,'%'],
-    ['运维参数','首年衰减率',document.getElementById('p_degradY1').value,'%'],
-    ['运维参数','逐年衰减率',document.getElementById('p_degradAnnual').value,'%'],
-    ['税费参数','所得税率',document.getElementById('p_incomeTax').value,'%'],
-    ['税费参数','三免三减半',document.getElementById('p_taxHoliday').options[document.getElementById('p_taxHoliday').selectedIndex].text,''],
-    ['税费参数','所得税优惠年限',document.getElementById('p_taxPreferenceYears').value,'年'],
-    ['税费参数','增值税率',document.getElementById('p_vatRate').value,'%'],
-    ['税费参数','增值税免税年限',document.getElementById('p_vatExemptYears').value,'年'],
-    ['税费参数','增值税进项留抵退50%',document.getElementById('p_vatRefund').options[document.getElementById('p_vatRefund').selectedIndex].text,''],
-    ['税费参数','销售税率',document.getElementById('p_salesTaxRate').value,'%'],
-    ['税费参数','销售税免税年限',document.getElementById('p_salesTaxExemptYears').value,'年'],
-    ['税费参数','城建税率',document.getElementById('p_cityConstrTax').value,'%'],
-    ['税费参数','教育附加费率',document.getElementById('p_eduSurcharge').value,'%'],
-    ['税费参数','预提税',document.getElementById('p_withholdingTax').value,'%'],
-    ['税费参数','预提税已开启',document.getElementById('p_withholdingTax').value>0?'是':'否',''],
-    ['税费参数','房产税率',document.getElementById('p_propertyTax').value,'%'],
-    ['融资参数','资本金比例',document.getElementById('p_equityRatio').value,'%'],
-    ['融资参数','贷款利率',document.getElementById('p_loanRate').value,'%'],
-    ['融资参数','贷款期限',document.getElementById('p_loanTerm').value,'年'],
-    ['融资参数','还款方式',document.getElementById('p_repayMethod').options[document.getElementById('p_repayMethod').selectedIndex].text,''],
-    ['融资参数','流动资金贷款利率',document.getElementById('p_wcLoanRate').value,'%'],
-    ['融资参数','流动资金',document.getElementById('p_workingCapital').value,'10K CNY'],
-
-    ['折旧及其他','残值率',document.getElementById('p_deprResidual').value,'%'],
-    ['折旧及其他','单位kW设备价',document.getElementById('p_equipPricePerKw').value,'CNY/kW'],
-    ['折旧及其他','通货膨胀率(CPI)',document.getElementById('p_cpi').value,'%'],
-	    ['折旧及其他','保险费率1-5年',document.getElementById('p_insRate1').value+'% '+document.getElementById('p_insRate2').value+'% '+document.getElementById('p_insRate3').value+'% '+document.getElementById('p_insRate4').value+'% '+document.getElementById('p_insRate5').value+'%','%'],
-    ['折旧及其他','法定盈余公积金',document.getElementById('p_reserveRate').value,'%'],
-    ['WACC参数','Beta系数',document.getElementById('p_beta').value,''],
-    ['WACC参数','无风险利率',document.getElementById('p_riskFreeRate').value,'%'],
-    ['WACC参数','市场收益率',document.getElementById('p_marketReturn').value,'%'],
-  ];
-  if (typeof XLSX === 'undefined') { alert('Excel导出库加载中，请稍后再试'); return; }
-  const ws = XLSX.utils.aoa_to_sheet(params);
-  ws['!cols'] = [{wch:12},{wch:28},{wch:12},{wch:12}];
-  const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, '参数');
-  XLSX.writeFile(wb, '财务模型参数.xlsx');
+// ====== Build params sheet (shared helper) ======
+function _buildParamsSheet() {
+  const pData = [['参数类别','参数名称','数值','单位']];
+  const secs = document.querySelectorAll('.left-panel .section');
+  secs.forEach(sec => {
+    const header = sec.querySelector('.section-header');
+    let secName = '';
+    if (header) {
+      const enText = header.querySelector('.en')?.textContent || '';
+      secName = header.textContent.replace(enText, '').replace('▼','').trim();
+    }
+    sec.querySelectorAll('.field').forEach(f => {
+      const labelEl = f.querySelector('label');
+      if (!labelEl) return;
+      const label = labelEl.textContent.replace(/\s+/g,' ').trim();
+      const input = f.querySelector('input, select, textarea');
+      const unitEl = f.querySelector('.unit');
+      const unit = unitEl ? unitEl.textContent : '';
+      if (!input) return;
+      let val = '';
+      if (input.type === 'select-one') val = input.options[input.selectedIndex]?.text || '';
+      else val = input.value;
+      pData.push([secName, label, val, unit]);
+    });
+  });
+  const ws = XLSX.utils.aoa_to_sheet(pData);
+  ws['!cols'] = [{wch:14},{wch:34},{wch:16},{wch:14}];
+  return ws;
 }
 
-// ====== Download ALL tables + params as multi-sheet Excel ======
+// ====== Download ALL parameters as Excel ======
+function dlParams() {
+  if (typeof XLSX === 'undefined') { alert('Excel导出库加载中，请稍后再试'); return; }
+  try {
+    calcAll();
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, _buildParamsSheet(), '参数');
+    XLSX.writeFile(wb, '财务模型参数.xlsx');
+  } catch(e) { alert('导出失败：'+e.message); }
+}
+
+// ====== Download ALL tables + params + LCOE as multi-sheet Excel ======
 function dlAll() {
   if (typeof XLSX === 'undefined') { alert('Excel导出库加载中，请稍后再试'); return; }
   try {
-    calcAll(); // ensure fresh data
+    calcAll();
     const wb = XLSX.utils.book_new();
-    // Params sheet
-    const pData = [['参数类别','参数名称','数值','单位']];
-    document.querySelectorAll('.left-panel input, .left-panel select').forEach(el => {
-      const label = el.closest('.field')?.querySelector('label')?.textContent || '';
-      const unit = el.closest('.field')?.querySelector('.unit')?.textContent || '';
-      const val = el.type === 'select-one' ? (el.options[el.selectedIndex]?.text||'') : el.value;
-      const sec = el.closest('.section')?.querySelector('.section-header span')?.textContent?.split('  <span class="en" style="font-size:0.67rem;font-weight:400;color:#4a7a7a"> </span>')[1] || '';
-      pData.push([sec, label, val, unit]);
-    });
-    const ps = XLSX.utils.aoa_to_sheet(pData);
-    XLSX.utils.book_append_sheet(wb, ps, '参数');
-    // Results summary
+
+    // Sheet 1: Parameters (same comprehensive scan as dlParams)
+    XLSX.utils.book_append_sheet(wb, _buildParamsSheet(), '参数');
+
+    // Sheet 2: Results Summary (metrics cards)
     const rEl = document.getElementById('metrics');
     if (rEl) {
-      const rData = [['指标','数值']];
+      const rData = [['指标','数值','说明']];
       rEl.querySelectorAll('.metric-card').forEach(c => {
-        const lbl = c.querySelector('.label')?.textContent || '';
-        const val = c.querySelector('.value')?.textContent || '';
-        const sub = c.querySelector('.sub')?.textContent || '';
+        const lbl = c.querySelector('.label')?.textContent?.replace(/\s+/g,' ').trim() || '';
+        const val = c.querySelector('.value')?.textContent?.replace(/\s+/g,' ').trim() || '';
+        const sub = c.querySelector('.sub')?.textContent?.replace(/\s+/g,' ').trim() || '';
         rData.push([lbl, val, sub]);
       });
       const rs = XLSX.utils.aoa_to_sheet(rData);
+      rs['!cols'] = [{wch:36},{wch:20},{wch:20}];
       XLSX.utils.book_append_sheet(wb, rs, '结论');
     }
-    // Financial tables
-    const tabs = [
-      ['tabIncome','损益表'],['tabProjCF','全部投资现金流'],['tabEquityCF','资本金现金流'],
-      ['tabDebt','还本付息表'],['tabRevenue','销售收入'],['tabBalance','资产负债表']
+
+    // Sheets 3+: All financial tables
+    const allTabs = [
+      ['tabIncome','损益表'], ['tabProjCF','全部投资现金流'], ['tabEquityCF','资本金现金流'],
+      ['tabDebt','还本付息表'], ['tabRevenue','销售收入'], ['tabBalance','资产负债表'],
+      ['tabCost','总成本表'], ['tabFinancing','资金筹措'], ['tabDepreciation','折旧表'],
+      ['tabAmortization','摊销表'], ['tabFinancialPlan','财务计划'], ['tabDecision','决策信息模版']
     ];
-    tabs.forEach(([id, name]) => {
+    allTabs.forEach(([id, name]) => {
       const wrap = document.getElementById(id);
       const table = wrap && wrap.querySelector('table');
       if (table && table.rows.length > 1) {
@@ -2340,6 +2290,16 @@ function dlAll() {
         } catch(e) { console.warn('Skip sheet '+name, e); }
       }
     });
+
+    // LCOE calculation detail
+    const lcoeTable = document.querySelector('#lcoeDetail table');
+    if (lcoeTable) {
+      try {
+        const ws = XLSX.utils.table_to_sheet(lcoeTable, { raw: true });
+        XLSX.utils.book_append_sheet(wb, ws, 'LCOE');
+      } catch(e) { console.warn('Skip LCOE sheet', e); }
+    }
+
     XLSX.writeFile(wb, '财务模型全部表格.xlsx');
   } catch(e) { alert('导出失败：'+e.message); }
 }
