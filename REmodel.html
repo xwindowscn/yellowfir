@@ -2282,12 +2282,17 @@ function dlAll() {
     ];
     allTabs.forEach(([id, name]) => {
       const wrap = document.getElementById(id);
-      const table = wrap && wrap.querySelector('table');
-      if (table && table.rows.length > 1) {
-        try {
-          const ws = XLSX.utils.table_to_sheet(table, { raw: true });
-          XLSX.utils.book_append_sheet(wb, ws, name);
-        } catch(e) { console.warn('Skip sheet '+name, e); }
+      const tables = wrap && wrap.querySelectorAll('table');
+      if (tables && tables.length) {
+        tables.forEach((t, i) => {
+          if (t.rows.length > 1) {
+            try {
+              const ws = XLSX.utils.table_to_sheet(t, { raw: true });
+              const sheetName = tables.length > 1 ? name + (i+1) : name;
+              XLSX.utils.book_append_sheet(wb, ws, sheetName);
+            } catch(e) { console.warn('Skip sheet '+name+(i+1), e); }
+          }
+        });
       }
     });
 
