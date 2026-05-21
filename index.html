@@ -13,6 +13,15 @@
     <link rel="icon" type="image/png" sizes="192x192" href="https://raw.githubusercontent.com/xwindowscn/yellowfir/main/icon-192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="https://raw.githubusercontent.com/xwindowscn/yellowfir/main/icon-512.png">
     <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/xwindowscn/yellowfir/main/apple-touch-icon-180.png">
+    <script>
+    // Safari favicon workaround: Safari blocks raw.githubusercontent.com favicons due to CSP
+    if (/^((?!chrome|android|crios|fxios|edg).)*safari/i.test(navigator.userAgent)) {
+        document.querySelectorAll('link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"]').forEach(function(el) {
+            el.href = el.href.replace('raw.githubusercontent.com/xwindowscn/yellowfir/refs/heads/main/', 'www.yellowfir.com/')
+                              .replace('raw.githubusercontent.com/xwindowscn/yellowfir/main/', 'www.yellowfir.com/');
+        });
+    }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,500;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
