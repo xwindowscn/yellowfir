@@ -146,6 +146,25 @@
             margin-top: 1px
         }
 
+        .section-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.35rem;
+            height: 1.35rem;
+            margin-right: 5px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00d084, #27ae60);
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 700;
+            line-height: 1;
+            text-shadow: 0 1px 1px rgba(0,0,0,.25);
+            box-shadow: 0 1px 4px rgba(0,128,84,.4), inset 0 -1px 2px rgba(0,0,0,.15);
+            border: 1px solid rgba(255,255,255,.55);
+            vertical-align: -0.15rem
+        }
+
         .s1 .section-header {
             background: linear-gradient(135deg, #e8f5e9, #f0faf0)
         }
@@ -994,7 +1013,7 @@
         <div class="left-panel" id="leftPanel">
             <h1>📊 光伏/风电财务模型 <span style="font-size:0.72rem;color:#6a8a8a;font-weight:400">PV/Wind Financial Model</span><span style="font-size:0.6rem;color:#c0392b;font-weight:400;margin-left:6px">v4</span></h1>
             <div class="section s1">
-                <div class="section-header"><span>📐 一、工程概况 <span class="en" style="font-weight:400;font-size:0.65rem">Project Overview</span></span><span class="arrow">▼</span></div>
+                <div class="section-header"><span>📐 <span class="section-num">1</span>工程概况 <span class="en" style="font-weight:400;font-size:0.65rem">Project Overview</span></span><span class="arrow">▼</span></div>
                 <div class="section-body">
                     <div class="field full"><label>项目名称 <span class="en">Project Name</span></label>
                         <div style="display:flex;gap:0;align-items:stretch;border:1px solid #c8d6e5;border-radius:5px;overflow:hidden;background:#fff"><input type="text" id="p_projPrefix" value="吉尔吉斯斯坦共和国600MW" placeholder="前缀" style="flex:1;border:none;padding:5px 7px;color:#1a2a3a;font-size:0.75rem;font-family:inherit;outline:none;text-align:center;background:transparent"><select id="p_projGenType" onchange="combineProjectName()" style="flex:0 0 72px;border:none;border-left:1px solid #e0e8f0;border-right:1px solid #e0e8f0;padding:5px 2px;color:#0d7c3f;font-size:0.78rem;font-family:inherit;font-weight:650;outline:none;text-align:center;background:#f0fff4;cursor:pointer">
@@ -1032,7 +1051,7 @@
                 </div>
             </div>
             <div class="section s2">
-                <div class="section-header"><span>⚡ 二、电价参数 <span class="en" style="font-weight:400;font-size:0.65rem">Tariff Parameters</span></span><span class="arrow">▼</span></div>
+                <div class="section-header"><span>⚡ <span class="section-num">2</span>电价参数 <span class="en" style="font-weight:400;font-size:0.65rem">Tariff Parameters</span></span><span class="arrow">▼</span></div>
                 <div class="section-body">
                     <div class="grid-4col">
                         <div class="field"><label>批复电价 <span class="en">Approved Tariff</span></label><input type="number" id="p_approvedTariff" value="0.35" step="0.005"><span class="unit">CNY/kWh</span></div>
@@ -1066,7 +1085,7 @@
                 </div>
             </div>
             <div class="section s3">
-                <div class="section-header"><span>🔋 三、储能参数 <span class="en" style="font-weight:400;font-size:0.65rem">Storage Parameters</span></span><span class="arrow">▼</span></div>
+                <div class="section-header"><span>🔋 <span class="section-num">3</span>储能参数 <span class="en" style="font-weight:400;font-size:0.65rem">Storage Parameters</span></span><span class="arrow">▼</span></div>
                 <div class="section-body">
                     <div class="field"><label>电池类型 <span class="en">Battery Type</span></label><select id="p_batteryType">
                             <option value="磷酸铁锂">磷酸铁锂 LFP</option>
@@ -1110,7 +1129,7 @@
                 </div>
             </div>
             <div class="section s4">
-                <div class="section-header"><span>🔧 四、运维参数 <span class="en" style="font-weight:400;font-size:0.65rem">O&M Parameters</span></span><span class="arrow">▼</span></div>
+                <div class="section-header"><span>🔧 <span class="section-num">4</span>运维参数 <span class="en" style="font-weight:400;font-size:0.65rem">O&M Parameters</span></span><span class="arrow">▼</span></div>
                 <div class="section-body">
                     <div class="field full" style="display:flex;flex-direction:row;gap:12px">
                         <div class="field" style="flex:1"><label>运维模式 <span class="en">O&M Mode</span></label><select id="p_omMode">
@@ -1157,7 +1176,7 @@
                 </div>
             </div>
             <div class="section s5">
-                <div class="section-header"><span>💰 五、税费参数 <span class="en" style="font-weight:400;font-size:0.65rem">Tax Parameters</span></span><span class="arrow">▼</span></div>
+                <div class="section-header"><span>💰 <span class="section-num">5</span>税费参数 <span class="en" style="font-weight:400;font-size:0.65rem">Tax Parameters</span></span><span class="arrow">▼</span></div>
                 <div class="section-body">
                     <div class="field" style="grid-column:1/-1;display:flex;flex-direction:row;gap:12px">
                         <div class="field" style="flex:1"><label>三免三减半 <span class="en">3yr Full + 3yr Half (Tax Holiday)</span></label><select id="p_taxHoliday">
@@ -1198,7 +1217,7 @@
                 </div>
             </div>
             <div class="section s6">
-                <div class="section-header"><span>🏦 六、融资参数 <span class="en" style="font-weight:400;font-size:0.65rem">Financing</span></span><span class="arrow">▼</span></div>
+                <div class="section-header"><span>🏦 <span class="section-num">6</span>融资参数 <span class="en" style="font-weight:400;font-size:0.65rem">Financing</span></span><span class="arrow">▼</span></div>
                 <div class="section-body">
                     <div class="field"><label>资本金比例 <span class="en">Equity Ratio</span></label><input type="number" id="p_equityRatio" value="30" step="1"><span class="unit">%</span></div>
                     <div class="field"><label>贷款比例 <span class="en">Loan Ratio</span></label><input type="number" id="p_debtRatioDisplay" value="70" step="1" readonly><span class="unit">%（自动计算）</span></div>
@@ -1217,7 +1236,7 @@
                 </div>
             </div>
             <div class="section s7">
-                <div class="section-header"><span>📉 七、折旧及其他 <span class="en" style="font-weight:400;font-size:0.65rem">Depreciation & Other</span></span><span class="arrow">▼</span></div>
+                <div class="section-header"><span>📉 <span class="section-num">7</span>折旧及其他 <span class="en" style="font-weight:400;font-size:0.65rem">Depreciation & Other</span></span><span class="arrow">▼</span></div>
                 <div class="section-body">
                     <div class="field"><label>折旧年限 <span class="en">Depr. Years</span></label><input type="number" id="p_deprYears" value="25" step="1"><span class="unit">年</span></div>
                     <div class="field"><label>残值率 <span class="en">Residual Rate</span></label><input type="number" id="p_deprResidual" value="5" step="0.5"><span class="unit">%</span></div>
@@ -1227,51 +1246,73 @@
                 </div>
             </div>
             <div class="section s8">
-                <div class="section-header"><span>📊 八、WACC参数 <span class="en" style="font-weight:400;font-size:0.65rem">WACC Parameters</span></span><span class="arrow">▼</span></div>
+                <div class="section-header"><span>📊 <span class="section-num">8</span>WACC参数 <span class="en" style="font-weight:400;font-size:0.65rem">WACC Parameters</span></span><span class="arrow">▼</span></div>
                 <div class="section-body">
                     <div class="field" style="grid-column:1/-1;background:#f8fafc;border-radius:4px;padding:5px 8px;margin-bottom:2px">
                         <div style="font-size:0.62rem;color:#3a5a6a;line-height:1.5">
-                            <div><b>CAPM:</b> R<sub>e</sub> = R<sub>f</sub> + β × (R<sub>m</sub> − R<sub>f</sub>)</div>
+                            <div><b>再杠杆:</b> β<sub>L</sub> = β<sub>u</sub> × [1 + (1 − T<sub>c</sub>) × D/E]</div>
+                            <div><b>CAPM(新兴市场):</b> R<sub>e</sub> = r<sub>RF</sub> + β<sub>L</sub> × ERP + CRP</div>
                             <div><b>WACC:</b> WACC = (E/V) × R<sub>e</sub> + (D/V) × R<sub>d</sub> × (1 − T<sub>c</sub>)</div>
-                            <div style="margin-top:2px;color:#5a7a8a"> R<sub>f</sub> = <span class="en">Risk-Free Rate</span> · β = <span class="en">Beta</span> · R<sub>m</sub> = <span class="en">Market Return</span> · (R<sub>m</sub>−R<sub>f</sub>) = <span class="en">Market Risk Premium</span> · β×(R<sub>m</sub>−R<sub>f</sub>) = <span class="en">Risk Premium</span></div>
+                            <div style="margin-top:2px;color:#5a7a8a"> β<sub>u</sub> = <span class="en">Unlevered Beta</span> · β<sub>L</sub> = <span class="en">Levered Beta</span> · ERP = <span class="en">Equity Risk Premium</span> · CRP = <span class="en">Country Risk Premium</span> · 黄色＝输入，灰色＝引用/公式</div>
                         </div>
                     </div>
-                    <div class="field"><label>Beta系数 <span class="en">Beta</span></label><input type="number" id="p_beta" value="1.1" step="0.05"><span class="unit"></span></div>
-                    <div class="field"><label>无风险利率 <span class="en">Risk-Free Rate</span></label><input type="number" id="p_riskFreeRate" value="3.52" step="0.1"><span class="unit">%</span></div>
-                    <div class="field"><label>市场收益率 <span class="en">Market Return</span></label><input type="number" id="p_marketReturn" value="12" step="0.5"><span class="unit">%</span></div>
-                    <div class="field" style="grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:5px">
-                        <div style="background:#f0f5f8;border-radius:4px;padding:4px 6px;text-align:center">
-                            <div style="font-size:0.6rem;color:#5a7a8a">E/V</div>
+                    <div style="grid-column:1/-1;display:grid;grid-template-columns:repeat(5,1fr);gap:5px">
+                        <div class="field"><label>行业无杠杆β β<sub>u</sub> <span class="en">Unlevered Beta</span></label><input type="number" id="p_betaU" value="0.4" step="0.01"><span class="unit"></span></div>
+                        <div class="field"><label>无风险利率 r<sub>RF</sub> <span class="en">Risk-Free · RMB 10Y</span></label><input type="number" id="p_riskFreeRate" value="1.7" step="0.1"><span class="unit">%</span></div>
+                        <div class="field"><label>股权风险溢价 ERP <span class="en">Equity Risk Premium</span></label><input type="number" id="p_erp" value="5" step="0.5"><span class="unit">%</span></div>
+                        <div class="field"><label>国家风险溢价 CRP <span class="en">Country Risk Premium</span></label><input type="number" id="p_crp" value="5.4" step="0.1"><span class="unit">%</span></div>
+                        <div class="field"><label>债务成本 R<sub>d</sub> <span class="en">Cost of Debt · RMB</span></label><input type="number" id="p_waccRd" value="4.5" step="0.1"><span class="unit">%</span></div>
+                    </div>
+                    <div class="field" style="grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px">
+                        <div style="background:#eef3f6;border-radius:4px;padding:4px 6px;text-align:center">
+                            <div style="font-size:0.58rem;color:#5a7a8a">E/V <span class="en">引用资本金比例</span></div>
                             <div style="font-size:0.7rem;color:#0d7c3f;font-weight:650" id="waccEvDisplay">30%</div>
                         </div>
-                        <div style="background:#f0f5f8;border-radius:4px;padding:4px 6px;text-align:center">
-                            <div style="font-size:0.6rem;color:#5a7a8a">D/V</div>
+                        <div style="background:#eef3f6;border-radius:4px;padding:4px 6px;text-align:center">
+                            <div style="font-size:0.58rem;color:#5a7a8a">D/V <span class="en">=1−E/V</span></div>
                             <div style="font-size:0.7rem;color:#0d7c3f;font-weight:650" id="waccDvDisplay">70%</div>
                         </div>
-                        <div style="background:#f0f5f8;border-radius:4px;padding:4px 6px;text-align:center">
-                            <div style="font-size:0.6rem;color:#5a7a8a">T<sub>c</sub><span class="en">Income Tax Rate</span></div>
+                        <div style="background:#eef3f6;border-radius:4px;padding:4px 6px;text-align:center">
+                            <div style="font-size:0.58rem;color:#5a7a8a">T<sub>c</sub> <span class="en">引用所得税率</span></div>
                             <div style="font-size:0.7rem;color:#0d7c3f;font-weight:650" id="waccTcDisplay">10%</div>
                         </div>
-                        <div style="background:#f0f5f8;border-radius:4px;padding:4px 6px;text-align:center">
-                            <div style="font-size:0.6rem;color:#5a7a8a">R<sub>d</sub><span class="en">Loan Interest Rate</span></div>
-                            <div style="font-size:0.7rem;color:#0d7c3f;font-weight:650" id="waccRdDisplay">3.60%</div>
-                        </div>
                     </div>
-                    <div class="field" style="grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:5px">
-                        <div style="background:#f0f8f4;border-radius:4px;padding:5px 8px;text-align:center;border:1px solid #c0e0c8">
-                            <div style="font-size:0.6rem;color:#5a7a8a">权益成本 <span class="en">Cost of Equity</span> R<sub>e</sub> = R<sub>f</sub>+β×(R<sub>m</sub>−R<sub>f</sub>)</div>
+                    <div class="field" style="grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:5px">
+                        <div style="background:#f0f5f8;border-radius:4px;padding:4px 6px;text-align:center">
+                            <div style="font-size:0.58rem;color:#5a7a8a">再杠杆β β<sub>L</sub> = β<sub>u</sub>×[1+(1−T<sub>c</sub>)×D/E]</div>
+                            <div style="font-size:0.7rem;color:#0d7c3f;font-weight:650" id="waccBlDisplay">计算中...</div>
+                        </div>
+                        <div style="background:#f0f5f8;border-radius:4px;padding:4px 6px;text-align:center">
+                            <div style="font-size:0.58rem;color:#5a7a8a">税后债务成本 R<sub>d</sub>×(1−T<sub>c</sub>)</div>
+                            <div style="font-size:0.7rem;color:#0d7c3f;font-weight:650" id="waccRdAtDisplay">计算中...</div>
+                        </div>
+                        <div style="background:#f0f8f4;border-radius:4px;padding:4px 6px;text-align:center;border:1px solid #c0e0c8">
+                            <div style="font-size:0.58rem;color:#5a7a8a">权益成本 R<sub>e</sub> = r<sub>RF</sub>+β<sub>L</sub>×ERP+CRP</div>
                             <div style="font-size:0.85rem;color:#0d7c3f;font-weight:700" id="waccReDisplay">计算中...</div>
                         </div>
-                        <div style="background:#f0f8f4;border-radius:4px;padding:5px 8px;text-align:center;border:1px solid #c0e0c8">
-                            <div style="font-size:0.6rem;color:#5a7a8a">加权平均资本成本 <span class="en">WACC (Weighted Average Cost of Capital)</span></div>
+                        <div style="background:#f0f8f4;border-radius:4px;padding:4px 6px;text-align:center;border:1px solid #c0e0c8">
+                            <div style="font-size:0.58rem;color:#5a7a8a">WACC <span class="en">Weighted Avg Cost of Capital</span></div>
                             <div style="font-size:0.95rem;color:#0d7c3f;font-weight:700" id="waccDisplay">计算中...</div>
-                            <div style="font-size:0.55rem;color:#6a9aaa;margin-top:2px">(E/V)×R<sub>e</sub>+(D/V)×R<sub>d</sub>×(1−T<sub>c</sub>)</div>
+                            <div style="font-size:0.5rem;color:#6a9aaa;margin-top:2px">(E/V)×R<sub>e</sub>+(D/V)×R<sub>d</sub>×(1−T<sub>c</sub>)</div>
+                        </div>
+                    </div>
+                    <div class="field" style="grid-column:1/-1;background:#fffdf5;border-radius:4px;padding:6px 8px;border:1px solid #e8ddb8;margin-top:2px">
+                        <div style="font-size:0.62rem;color:#5a7a6a;line-height:1.5">
+                            <div style="font-weight:700;color:#8a6d1a;margin-bottom:3px">💰 美元融资(基准·主表) vs 全人民币融资 <span class="en" style="font-weight:400">USD Base vs All-RMB Financing</span></div>
+                            <table style="width:100%;border-collapse:collapse;font-size:0.62rem">
+                                <tr><td style="padding:1px 4px;color:#5a7a8a">无风险利率 rRF</td><td style="text-align:right;padding:1px 4px">4.70%</td><td style="text-align:right;padding:1px 4px;color:#0d7c3f;font-weight:700">1.70%</td></tr>
+                                <tr><td style="padding:1px 4px;color:#5a7a8a">再杠杆β βL</td><td style="text-align:right;padding:1px 4px">1.24</td><td style="text-align:right;padding:1px 4px;color:#0d7c3f;font-weight:700">1.24</td></tr>
+                                <tr><td style="padding:1px 4px;color:#5a7a8a">权益成本 Re</td><td style="text-align:right;padding:1px 4px">16.30%</td><td style="text-align:right;padding:1px 4px;color:#0d7c3f;font-weight:700">13.30%</td></tr>
+                                <tr><td style="padding:1px 4px;color:#5a7a8a">债务成本 Rd</td><td style="text-align:right;padding:1px 4px">7.00%</td><td style="text-align:right;padding:1px 4px;color:#0d7c3f;font-weight:700">4.50%</td></tr>
+                                <tr><td style="padding:1px 4px;color:#5a7a8a">税后债务成本 Rd×(1−Tc)</td><td style="text-align:right;padding:1px 4px">6.30%</td><td style="text-align:right;padding:1px 4px;color:#0d7c3f;font-weight:700">4.05%</td></tr>
+                                <tr><td style="padding:1px 4px;color:#8a6d1a;font-weight:700">WACC ★</td><td style="text-align:right;padding:1px 4px;color:#b8860b;font-weight:700">9.30%</td><td style="text-align:right;padding:1px 4px;color:#0d7c3f;font-weight:700">6.83%</td></tr>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="section s9">
-                <div class="section-header"><span>🌍 九、土地补偿及租金 <span class="en" style="font-weight:400;font-size:0.65rem">Land Compensation & Rent</span></span><span class="arrow">▼</span></div>
+                <div class="section-header"><span>🌍 <span class="section-num">9</span>土地补偿及租金 <span class="en" style="font-weight:400;font-size:0.65rem">Land Compensation & Rent</span></span><span class="arrow">▼</span></div>
                 <div class="section-body">
                     <div class="field"><label>占地面积 <span class="en">Land Area</span></label><input type="number" id="p_landArea" value="1232.7" step="0.1"><span class="unit">公顷 ha</span></div>
                     <div class="field"><label>年租金 <span class="en">Annual Rent</span></label><input type="number" id="p_annualRent" value="180" step="1"><span class="unit">USD/公顷 USD/ha</span></div>
@@ -1295,7 +1336,7 @@
                     <h3>收入-成本构成 <span style="font-size:0.72rem;color:#4a7a7a;font-weight:400">Revenue-Cost Breakdown</span><span style="font-size:0.55rem;color:#8a9aaa;font-weight:400">(Million CNY)</span></h3><canvas id="chartRev"></canvas>
                 </div>
             </div>
-            <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'tabIncome')">损益表<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Income Statement</span></button><button class="tab-btn" onclick="switchTab(this,'tabProjCF')">全部投资现金流<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Project Cash Flow</span></button><button class="tab-btn" onclick="switchTab(this,'tabEquityCF')">资本金现金流<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Equity Cash Flow</span></button><button class="tab-btn" onclick="switchTab(this,'tabDebt')">还本付息表<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Debt Service</span></button><button class="tab-btn" onclick="switchTab(this,'tabRevenue')">销售收入<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Revenue</span></button><button class="tab-btn" onclick="switchTab(this,'tabBalance')">资产负债表<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Balance Sheet</span></button><button class="tab-btn" onclick="switchTab(this,'tabCost')">总成本表<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Total Cost</span></button><button class="tab-btn" onclick="switchTab(this,'tabFinancing')">资金筹措<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Financing</span></button><button class="tab-btn" onclick="switchTab(this,'tabDepreciation')">折旧表<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Depreciation</span></button><button class="tab-btn" onclick="switchTab(this,'tabAmortization')">摊销表<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Amortization</span></button><button class="tab-btn" onclick="switchTab(this,'tabFinancialPlan')">财务计划<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Financial Plan</span></button><button class="tab-btn" onclick="switchTab(this,'tabDecision')">决策信息模版<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Decision Template</span></button></div>
+            <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'tabIncome')">损益表<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Income Statement</span></button><button class="tab-btn" onclick="switchTab(this,'tabProjCF')">全部投资现金流<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Project Cash Flow</span></button><button class="tab-btn" onclick="switchTab(this,'tabEquityCF')">资本金现金流<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Equity Cash Flow</span></button><button class="tab-btn" onclick="switchTab(this,'tabDebt')">还本付息表<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Debt Service</span></button><button class="tab-btn" onclick="switchTab(this,'tabRevenue')">销售收入<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Revenue</span></button><button class="tab-btn" onclick="switchTab(this,'tabBalance')">资产负债表<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Balance Sheet</span></button><button class="tab-btn" onclick="switchTab(this,'tabCost')">总成本表<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Total Cost</span></button><button class="tab-btn" onclick="switchTab(this,'tabFinancing')">资金筹措<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Financing</span></button><button class="tab-btn" onclick="switchTab(this,'tabDepreciation')">折旧表<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Depreciation</span></button><button class="tab-btn" onclick="switchTab(this,'tabAmortization')">摊销表<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Amortization</span></button><button class="tab-btn" onclick="switchTab(this,'tabFinancialPlan')">财务计划<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Financial Plan</span></button><button class="tab-btn" onclick="switchTab(this,'tabDecision')">决策信息模版<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">Decision Template</span></button><button class="tab-btn" onclick="switchTab(this,'tabWaccSensitivity')">WACC敏感度<span style="display:block;font-size:0.7rem;color:#4a7a7a;font-weight:400">WACC Sensitivity</span></button></div>
             <div class="table-wrap tab-output" id="tabIncome">
                 <div class="table-dl"><button onclick="dlTable('tabIncome','损益表')">📥 下载Excel<span style="display:block;font-size:0.67rem;color:#4a7a7a;font-weight:400">Download Excel</span></button></div>
             </div>
@@ -1331,6 +1372,15 @@
             </div>
             <div class="table-wrap" id="tabDecision" style="display:none;margin-top:2px;border-top:2px solid #dce5ec;padding-top:2px">
                 <div class="table-dl"><button onclick="dlTable('tabDecision','决策信息模版')">📥 下载Excel<span style="display:block;font-size:0.67rem;color:#6a9a9a;font-weight:400">Download Excel</span></button></div>
+            </div>
+            <div class="table-wrap" id="tabWaccSensitivity" style="display:none;margin-top:2px;border-top:2px solid #dce5ec;padding-top:2px">
+                <div class="table-dl"><button onclick="dlTable('tabWaccSensitivity','WACC敏感度')">📥 下载Excel<span style="display:block;font-size:0.67rem;color:#6a9a9a;font-weight:400">Download Excel</span></button></div>
+                <div style="font-size:0.7rem;color:#2e6a9a;font-weight:700;padding:8px 2px 4px">🔍 WACC 敏感度矩阵（全人民币融资）：随 Rd(人民币) 与 CRP 变化 <span class="en" style="font-weight:400;color:#7a9aaa">Sensitivity: WACC vs Rd & CRP</span></div>
+                <table style="width:100%;border-collapse:collapse;font-size:0.65rem;text-align:center">
+                    <thead><tr><th style="color:#5a7a8a;font-weight:600;padding:3px 6px;background:#f0f5f8">Rd ＼ CRP</th><th style="color:#5a7a8a;font-weight:600;padding:3px 6px;background:#f0f5f8">3%</th><th style="color:#5a7a8a;font-weight:600;padding:3px 6px;background:#f0f5f8">4%</th><th style="color:#5a7a8a;font-weight:600;padding:3px 6px;background:#f0f5f8">5.4%</th><th style="color:#5a7a8a;font-weight:600;padding:3px 6px;background:#f0f5f8">6%</th><th style="color:#5a7a8a;font-weight:600;padding:3px 6px;background:#f0f5f8">7%</th></tr></thead>
+                    <tbody id="waccSensitivityBody"><tr><td colspan="6" style="color:#8a9aaa">计算中...</td></tr></tbody>
+                </table>
+                <div style="font-size:0.62rem;color:#3a5a6a;margin-top:6px;padding:0 2px"><b>结论：</b>全部人民币贷款可大幅降低融资成本，WACC 由美元融资的 9.3% 降至约 <b style="color:#0d7c3f">6.8%</b>（降幅约 2.5 个百分点）。基准组合 Rd=4.5%、CRP=5.4% → WACC≈6.8%。</div>
             </div>
         </div>
     </div>
@@ -1606,10 +1656,42 @@
                 insRate5: t("p_insRate5"),
                 insuranceFixed: t("p_insuranceFixedRate"),
                 reserveRate: t("p_reserveRate"),
-                beta: e("p_beta"),
+                betaU: e("p_betaU"),
                 riskFreeRate: t("p_riskFreeRate"),
-                marketReturn: t("p_marketReturn")
+                erp: t("p_erp"),
+                crp: t("p_crp"),
+                waccRd: t("p_waccRd")
             }
+        }
+
+        function renderWaccSensitivity() {
+            try {
+                const tbody = document.getElementById("waccSensitivityBody");
+                if (!tbody) return;
+                const p = readParams(),
+                    bu = p.betaU,
+                    erp = p.erp,
+                    tc = p.incomeTax,
+                    ev = p.equityRatio,
+                    dv = 1 - ev,
+                    de = ev > 0 ? dv / ev : 0,
+                    bl = bu * (1 + (1 - tc) * de),
+                    rf = p.riskFreeRate;
+                const rdRows = [.035, .04, .045, .05, .055],
+                    crpCols = [.03, .04, .054, .06, .07];
+                let html = "";
+                for (const rd of rdRows) {
+                    html += `<tr><td style="padding:2px 4px;color:#3a5a6a;font-weight:600">${(100 * rd).toFixed(1)}%</td>`;
+                    for (const crp of crpCols) {
+                        const re = rf + bl * erp + crp,
+                            wacc = ev * re + dv * rd * (1 - tc),
+                            base = Math.abs(rd - p.waccRd) < 1e-9 && Math.abs(crp - p.crp) < 1e-9;
+                        html += `<td style="padding:2px 4px;${base ? "background:#fff3c4;color:#b8860b;font-weight:700" : "color:#5a7a8a"}">${(100 * wacc).toFixed(3)}%</td>`;
+                    }
+                    html += "</tr>";
+                }
+                tbody.innerHTML = html;
+            } catch (e) {}
         }
 
         function toggleInsuranceRates() {
@@ -1646,14 +1728,15 @@
                 for (let t = 0; t < n; t++) e[t] = 0;
                 return e
             }
-            const o = e.riskFreeRate + e.beta * (e.marketReturn - e.riskFreeRate),
-                r = e.loanRate,
+            const waccBetaL = e.betaU * (1 + (1 - e.incomeTax) * (e.equityRatio > 0 ? (1 - e.equityRatio) / e.equityRatio : 0)),
+                o = e.riskFreeRate + waccBetaL * e.erp + e.crp,
+                r = e.waccRd,
                 l = e.equityRatio * o + (1 - e.equityRatio) * r * (1 - e.incomeTax),
                 i = e.equityRatio,
                 c = 1 - e.equityRatio,
                 p = e.incomeTax,
                 d = e => document.getElementById(e);
-            d("waccDisplay") && (d("waccDisplay").textContent = (100 * l).toFixed(2) + "%"), d("waccEvDisplay") && (d("waccEvDisplay").textContent = (100 * i).toFixed(0) + "%"), d("waccDvDisplay") && (d("waccDvDisplay").textContent = (100 * c).toFixed(0) + "%"), d("waccTcDisplay") && (d("waccTcDisplay").textContent = (100 * p).toFixed(0) + "%"), d("waccRdDisplay") && (d("waccRdDisplay").textContent = (100 * r).toFixed(2) + "%"), d("waccReDisplay") && (d("waccReDisplay").textContent = (100 * o).toFixed(2) + "%");
+            d("waccDisplay") && (d("waccDisplay").textContent = (100 * l).toFixed(2) + "%"), d("waccBlDisplay") && (d("waccBlDisplay").textContent = waccBetaL.toFixed(2)), d("waccReDisplay") && (d("waccReDisplay").textContent = (100 * o).toFixed(2) + "%"), d("waccRdAtDisplay") && (d("waccRdAtDisplay").textContent = (100 * r * (1 - p)).toFixed(2) + "%"), d("waccEvDisplay") && (d("waccEvDisplay").textContent = (100 * i).toFixed(0) + "%"), d("waccDvDisplay") && (d("waccDvDisplay").textContent = (100 * c).toFixed(0) + "%"), d("waccTcDisplay") && (d("waccTcDisplay").textContent = (100 * p).toFixed(0) + "%"), renderWaccSensitivity();
             const f = 1e4 * e.dcCap,
                 g = 1e4 * e.acCap * e.storageRatio,
                 u = g * e.storageDuration * 1e3,
@@ -1946,7 +2029,7 @@
             }
             const Qt = e => (100 * e).toFixed(2) + "%",
                 Zt = e => Math.abs(e) >= 1e4 ? (e / 1e4).toFixed(2) + " 100M" : e.toFixed(2) + " 10K";
-            document.getElementById("metrics").innerHTML = `\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card">\n <div class="label">总投资 <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Total Investment</span> (${(P/e.dcCap/1e3).toFixed(2)} <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">CNY/Wp</span>)</div>\n <div class="value gold">${Zt(P)}</div>\n <div class="sub"><span class="en">Loan</span> ${Zt(k)} &nbsp;|&nbsp; <span class="en">Equity</span> ${Zt(A)}</div>\n </div>\n <div class="metric-card">\n <div class="label">LCOE <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Levelized Cost</span></div>\n <div class="value">${qt.toFixed(4)}</div>\n <div class="sub"><span class="en">CNY/kWh</span> &nbsp;|&nbsp; WACC ${Qt(l)} &nbsp;|&nbsp; <span class="en">Avg Annual Rev.</span> ${Zt(jt)}</div>\n </div>\n </div>\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card project">\n <div class="label">全投资IRR <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Project IRR</span></div>\n <div class="value">${Qt(Mt)} <span style="font-size:0.75rem;color:#4a7a7a">税后 <span class="en" style="font-weight:400;font-size:0.55rem;color:#6a8a9a">Post-tax</span></span></div>\n <div class="sub"><span class="en">Pre-tax</span> ${Qt(Et)} &nbsp;|&nbsp; NPV ${Zt(Ft)}</div>\n </div>\n <div class="metric-card equity">\n <div class="label">资本金IRR <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Equity IRR</span></div>\n <div class="value">${Qt(Tt)} <span style="font-size:0.75rem;color:#4a7a7a">税后 <span class="en" style="font-weight:400;font-size:0.55rem;color:#6a8a9a">Post-tax</span></span></div>\n <div class="sub"><span class="en">Pre-tax</span> ${Qt(Pt)} &nbsp;|&nbsp; NPV ${Zt(St)}</div>\n </div>\n </div>\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card project">\n <div class="label">全投资回收期 <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Project Payback</span></div>\n <div class="value">${At.toFixed(2)} <span style="font-size:0.7rem;color:#4a7a7a"><span class="en">Year(s)</span></span></div>\n <div class="sub"><span class="en">Incl. Construction</span> ${e.constructPeriod}<span class="en">yr(s)</span></div>\n </div>\n <div class="metric-card equity">\n <div class="label">资本金回收期 <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Equity Payback</span></div>\n <div class="value">${kt.toFixed(2)} <span style="font-size:0.7rem;color:#4a7a7a"><span class="en">Year(s)</span></span></div>\n <div class="sub"><span class="en">Incl. Construction</span> ${e.constructPeriod}<span class="en">yr(s)</span></div>\n </div>\n </div>\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card">\n <div class="label">平均年收入 <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Avg Annual Revenue</span></div>\n <div class="value">${Zt(jt)}</div>\n <div class="sub"><span class="en">Average over</span> ${a} <span class="en">years</span></div>\n </div>\n <div class="metric-card">\n <div class="label">平均年净利润 <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Avg Annual Net Profit</span></div>\n <div class="value">${Zt(Vt)}</div>\n <div class="sub"><span class="en">Avg Net Profit Rate</span> ${Qt(Vt/(jt>0?jt:1))}</div>\n </div>\n </div>\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card project">\n <div class="label">建设期利息 <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Constr. Period Interest</span></div>\n <div class="value">${Zt(Wt)}</div>\n <div class="sub"><span class="en">Capitalized during</span> ${e.constructPeriod}<span class="en">yr(s)</span></div>\n </div>\n <div class="metric-card equity">\n <div class="label">总投资收益率ROI <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Return on Investment</span></div>\n <div class="value">${Qt(Xt)}</div>\n <div class="sub"><span class="en">Avg Net Profit / Total Invest</span></div>\n </div>\n </div>\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card project">\n <div class="label">投资利税率 <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Profit & Tax Rate</span></div>\n <div class="value">${Qt(Gt)}</div>\n <div class="sub"><span class="en">(Avg Profit + Avg Tax) / Total Invest</span></div>\n </div>\n <div class="metric-card equity">\n <div class="label">平均净资产收益率ROE <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Avg ROE</span></div>\n <div class="value">${Qt(It)}</div>\n <div class="sub"><span class="en">Avg Net Profit / Avg Equity</span></div>\n </div>\n </div>\n `;
+            document.getElementById("metrics").innerHTML = `\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card">\n <div class="label">总投资 <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Total Investment</span> (${(P/e.dcCap/1e3).toFixed(2)} <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">CNY/Wp</span>)</div>\n <div class="value gold">${Zt(P)}</div>\n <div class="sub"><span class="en">Loan</span> ${Zt(k)} &nbsp;|&nbsp; <span class="en">Equity</span> ${Zt(A)}</div>\n </div>\n <div class="metric-card">\n <div class="label">LCOE <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Levelized Cost</span></div>\n <div class="value">${qt.toFixed(4)}</div>\n <div class="sub"><span class="en">CNY/kWh</span> &nbsp;|&nbsp; WACC ${Qt(l)} &nbsp;|&nbsp; <span class="en">Avg Annual Rev.</span> ${Zt(jt)}</div>\n </div>\n </div>\n <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">\n <div class="metric-card project">\n <div class="label">全投资IRR <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Project IRR</span></div>\n <div class="value">${Qt(Mt)} <span style="font-size:0.75rem;color:#4a7a7a">税后 <span class="en" style="font-weight:400;font-size:0.55rem;color:#6a8a9a">Post-tax</span></span></div>\n <div class="sub"><span class="en">Pre-tax</span> ${Qt(Et)}</div>\n </div>\n <div class="metric-card equity">\n <div class="label">资本金IRR <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Equity IRR</span></div>\n <div class="value">${Qt(Tt)} <span style="font-size:0.75rem;color:#4a7a7a">税后 <span class="en" style="font-weight:400;font-size:0.55rem;color:#6a8a9a">Post-tax</span></span></div>\n <div class="sub"><span class="en">Pre-tax</span> ${Qt(Pt)}</div>\n </div>\n <div class="metric-card project">\n <div class="label">全投资NPV <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Project NPV</span></div>\n <div class="value">${Zt(Ft)}</div>\n <div class="sub"><span class="en">10K CNY</span> &nbsp;|&nbsp; <span class="en">WACC</span> ${Qt(l)}</div>\n </div>\n <div class="metric-card equity">\n <div class="label">资本金NPV <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Equity NPV</span></div>\n <div class="value">${Zt(St)}</div>\n <div class="sub"><span class="en">10K CNY</span> &nbsp;|&nbsp; <span class="en">WACC</span> ${Qt(l)}</div>\n </div>\n </div>\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card project">\n <div class="label">全投资回收期 <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Project Payback</span></div>\n <div class="value">${At.toFixed(2)} <span style="font-size:0.7rem;color:#4a7a7a"><span class="en">Year(s)</span></span></div>\n <div class="sub"><span class="en">Incl. Construction</span> ${e.constructPeriod}<span class="en">yr(s)</span></div>\n </div>\n <div class="metric-card equity">\n <div class="label">资本金回收期 <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Equity Payback</span></div>\n <div class="value">${kt.toFixed(2)} <span style="font-size:0.7rem;color:#4a7a7a"><span class="en">Year(s)</span></span></div>\n <div class="sub"><span class="en">Incl. Construction</span> ${e.constructPeriod}<span class="en">yr(s)</span></div>\n </div>\n </div>\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card">\n <div class="label">平均年收入 <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Avg Annual Revenue</span></div>\n <div class="value">${Zt(jt)}</div>\n <div class="sub"><span class="en">Average over</span> ${a} <span class="en">years</span></div>\n </div>\n <div class="metric-card">\n <div class="label">平均年净利润 <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Avg Annual Net Profit</span></div>\n <div class="value">${Zt(Vt)}</div>\n <div class="sub"><span class="en">Avg Net Profit Rate</span> ${Qt(Vt/(jt>0?jt:1))}</div>\n </div>\n </div>\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card project">\n <div class="label">建设期利息 <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Constr. Period Interest</span></div>\n <div class="value">${Zt(Wt)}</div>\n <div class="sub"><span class="en">Capitalized during</span> ${e.constructPeriod}<span class="en">yr(s)</span></div>\n </div>\n <div class="metric-card equity">\n <div class="label">总投资收益率ROI <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Return on Investment</span></div>\n <div class="value">${Qt(Xt)}</div>\n <div class="sub"><span class="en">Avg Net Profit / Total Invest</span></div>\n </div>\n </div>\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card project">\n <div class="label">投资利税率 <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Profit & Tax Rate</span></div>\n <div class="value">${Qt(Gt)}</div>\n <div class="sub"><span class="en">(Avg Profit + Avg Tax) / Total Invest</span></div>\n </div>\n <div class="metric-card equity">\n <div class="label">平均净资产收益率ROE <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Avg ROE</span></div>\n <div class="value">${Qt(It)}</div>\n <div class="sub"><span class="en">Avg Net Profit / Avg Equity</span></div>\n </div>\n </div>\n `;
             const ea = e => Math.abs(e) >= 1 ? e.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") : e.toFixed(4),
                 ta = [{
                     label: "项目总投资 Total Investment",
@@ -2936,7 +3019,8 @@
                         ["tabDepreciation", "折旧表", [20, 14, 14, 14, 14, 14]],
                         ["tabAmortization", "摊销表", [20, 14, 14, 14, 14, 14]],
                         ["tabFinancialPlan", "财务计划", [20, 14, 14, 14, 14, 14]],
-                        ["tabDecision", "决策信息模版", [20, 14, 14, 14, 14, 14]]
+                        ["tabDecision", "决策信息模版", [20, 14, 14, 14, 14, 14]],
+                        ["tabWaccSensitivity", "WACC敏感度", [16, 14, 14, 14, 14, 14]]
                     ];
                     h.forEach(([e, t, n]) => {
                         const l = v(e);
@@ -3012,7 +3096,8 @@
                     ["tabDepreciation", "折旧表"],
                     ["tabAmortization", "摊销表"],
                     ["tabFinancialPlan", "财务计划"],
-                    ["tabDecision", "决策信息模版"]
+                    ["tabDecision", "决策信息模版"],
+                    ["tabWaccSensitivity", "WACC敏感度"]
                 ].forEach(([t, a]) => {
                     const n = document.getElementById(t),
                         s = n && n.querySelectorAll("table");
@@ -3137,7 +3222,7 @@
             }
         }, document.addEventListener("DOMContentLoaded", () => {
             try {
-                const e = "6";
+                const e = "7";
                 localStorage.getItem("modelFormVersion") !== e && (localStorage.removeItem("modelFormState"), localStorage.setItem("modelFormVersion", e)), restoreFormState(),
                     function() {
                         const e = document.getElementById("p_projectName"),
