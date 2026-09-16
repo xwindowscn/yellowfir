@@ -491,7 +491,7 @@
 
         .metric-card .label {
             font-size: 0.68rem;
-            color: #6a8a9a;
+            color: #3a5a6a;
             margin-bottom: 4px;
             font-weight: 500
         }
@@ -499,7 +499,7 @@
         .metric-card .value {
             font-size: 1.3rem;
             font-weight: 700;
-            color: #0d7c3f
+            color: #1a3a4a
         }
 
         .metric-card .value.gold {
@@ -509,8 +509,21 @@
 
         .metric-card .sub {
             font-size: 0.68rem;
-            color: #8a9aaa;
+            color: #4a6a7a;
             margin-top: 3px
+        }
+
+        .metric-card .sub .en, .metric-card .label .en {
+            color: #4a6a7a;
+            font-weight: 500
+        }
+
+        .metric-card .value .mag {
+            font-size: 0.56em;
+            font-weight: 600;
+            opacity: .72;
+            margin-left: 1px;
+            white-space: nowrap
         }
 
         .metric-card.project {
@@ -1037,7 +1050,7 @@
                     <div class="field"><label>运营期 <span class="en">Operation</span></label><input type="number" id="p_operPeriod" value="25" step="1" min="1"><span class="unit">年</span></div>
                     <div class="field"><label>业主管理费率 <span class="en">Owner Mgmt Fee Rate</span></label><input type="number" id="p_ownerMgmtRate" value="1.8" step="0.1"><span class="unit">%</span></div>
                     <div class="field"><label>电站管理费率 <span class="en">Station Mgmt Fee Rate</span></label><input type="number" id="p_stationMgmtRate" value="1.8" step="0.1"><span class="unit">%</span></div>
-                    <div class="field"><label>电站EPC总价 <span class="en">Station EPC Price</span></label><input type="number" id="p_stationEpc" value="250000" step="100"><span class="unit">10K CNY</span></div>
+                    <div class="field"><label>电站EPC总价 <span class="en">Station EPC Price</span></label><input type="number" id="p_stationEpc" value="247200" step="100"><span class="unit">10K CNY</span></div>
                     <div class="computed-3col">
                         <div class="field computed"><label>电站总投资 <span class="en">Station Total Investment</span></label><span class="disp-value" id="cv_stationInvest">计算中...</span><span class="unit">10K CNY</span></div>
                         <div class="field computed"><label>电站业主管理费 <span class="en">Station Owner Mgmt Fee</span></label><span class="disp-value" id="cv_stationMgmtFee">计算中...</span><span class="unit">10K CNY</span></div>
@@ -1062,16 +1075,16 @@
                         <div class="field"><label>市场交易电价 <span class="en">Market Price</span></label><input type="number" id="p_marketPrice" value="0.35" step="0.005"><span class="unit">CNY/kWh</span></div>
                         <div class="field"><label>超发电价 <span class="en">Overgen Price</span></label><input type="number" id="p_overgenPrice" value="0.35" step="0.005"><span class="unit">CNY/kWh</span></div>
                         <div class="field"><label>储能电价 <span class="en">Storage Price</span></label><input type="number" id="p_storageElecPrice" value="0.35" step="0.005"><span class="unit">CNY/kWh</span></div>
-                        <div class="field"><label>保障利用小时(政策) <span class="en">Guar. Hrs (Policy)</span></label><input type="number" id="p_guaranteedHoursPolicy" value="1550" step="1"><span class="unit">h</span></div>
+                        <div class="field"><label>保障利用小时(政策) <span class="en">Guar. Hrs (Policy)</span></label><input type="number" id="p_guaranteedHoursPolicy" value="1545" step="1"><span class="unit">h</span></div>
                         <div class="field"><label>保障实际利用小时 <span class="en">Actual Guar. Hrs</span></label><input type="number" id="p_actualGuaranteedHours" value="1545" step="1" readonly><span class="unit">h（自动计算）</span></div>
                         <div class="field"><label>市场化交易小时数 <span class="en">Market Trade Hours</span></label><input type="number" id="p_marketTradeHours" value="0" step="1"><span class="unit">h</span></div>
-                        <div class="field"><label>实际发电小时数 <span class="en">Actual Gen Hours</span></label><input type="number" id="p_actualGenHours" value="1545" step="1"><span class="unit">h</span></div>
+                        <div class="field"><label>实际发电小时数 <span class="en">Actual Gen Hours</span></label><input type="number" id="p_actualGenHours" value="1529.55" step="1"><span class="unit">h</span></div>
                         <div class="field"><label>首年衰减率 <span class="en">1st Yr Degrad</span></label><input type="number" id="p_degradY1" value="1" step="0.1"><span class="unit">%</span></div>
                         <div class="field"><label>逐年衰减率 <span class="en">Annual Degrad</span></label><input type="number" id="p_degradAnnual" value="0.4" step="0.1"><span class="unit">%</span></div>
                         <div class="field"><label>首年利用小时 <span class="en">1st Yr Hours</span></label><input type="number" id="p_firstYearHours" value="1545" step="1"><span class="unit">h</span></div>
                         <div class="field"><label>电价含税? <span class="en">Tariff incl. Tax?</span></label><select id="p_tariffInclTax">
-                                <option value="0">不含税 (Ex.)</option>
-                                <option value="1" selected>含税 (In.)</option>
+                                <option value="0" selected>不含税 (Ex.)</option>
+                                <option value="1">含税 (In.)</option>
                             </select><span class="unit" style="opacity:0">&nbsp;</span></div>
                     </div>
                     <div class="computed-3col">
@@ -1102,7 +1115,7 @@
                     <div class="field"><label>充放效率 <span class="en">Efficiency</span></label><input type="number" id="p_storageEfficiency" value="85" step="0.5"><span class="unit">%</span></div>
                     <div class="field"><label>容量租赁比例 <span class="en">Lease Ratio</span></label><input type="number" id="p_storageLeaseRatio" value="85" step="0.5"><span class="unit">%</span></div>
                     <div class="field"><label>储能租赁价格 <span class="en">Storage Lease Price</span></label><input type="number" id="p_storageLeasePrice" value="0" step="0.1"><span class="unit">CNY/Wh</span></div>
-                    <div class="field"><label>电芯更换次数 <span class="en">Replace Times</span></label><input type="number" id="p_batteryReplaceTimes" value="0.458" step="0.01"><span class="unit">次</span></div>
+                    <div class="field"><label>电芯更换次数 <span class="en">Replace Times</span></label><input type="number" id="p_batteryReplaceTimes" value="1.458333" step="0.01"><span class="unit">次</span></div>
                     <div class="field"><label>更换成本(CNY/Wh) <span class="en">Replace Cost</span></label><input type="number" id="p_replaceCost" value="0.25" step="0.01"><span class="unit">CNY/Wh</span></div>
                     <div class="grid-4col">
                         <div class="field"><label>储能运维人数/100MWh <span class="en">Storage Staff/100MWh</span></label><input type="number" id="p_storageStaff100" value="10" step="1"><span class="unit">人</span></div>
@@ -1190,13 +1203,13 @@
                     </div>
                     <div class="field"><label>所得税优惠年限 <span class="en">Tax Pref. Years</span></label><input type="number" id="p_taxPreferenceYears" value="10" step="1"><span class="unit">年</span></div>
                     <div class="field"><label>增值税率 <span class="en">VAT Rate</span></label><input type="number" id="p_vatRate" value="12" step="0.5"><span class="unit">%</span></div>
-                    <div class="field"><label>增值税免税年限 <span class="en">VAT Exempt Yrs</span></label><input type="number" id="p_vatExemptYears" value="0" step="1"><span class="unit">年</span></div>
+                    <div class="field"><label>增值税免税年限 <span class="en">VAT Exempt Yrs</span></label><input type="number" id="p_vatExemptYears" value="10" step="1"><span class="unit">年</span></div>
                     <div class="field"><label>销售税率 <span class="en">Sales Tax</span></label><input type="number" id="p_salesTaxRate" value="1" step="0.1"><span class="unit">%</span></div>
-                    <div class="field"><label>销售税免税年限 <span class="en">Sales Tax Exempt</span></label><input type="number" id="p_salesTaxExemptYears" value="0" step="1"><span class="unit">年</span></div>
-                    <div class="field"><label>城建税率 <span class="en">City Tax</span></label><input type="number" id="p_cityConstrTax" value="5" step="0.1"><span class="unit">%</span></div>
-                    <div class="field"><label>教育附加费率 <span class="en">Edu Surcharge</span></label><input type="number" id="p_eduSurcharge" value="5" step="0.1"><span class="unit">%</span></div>
-                    <div class="field"><label>预提税 <span class="en">Withholding Tax</span></label><input type="number" id="p_withholdingTax" value="0" step="0.1"><span class="unit">%</span></div>
-                    <div class="field"><label>房产税率 <span class="en">Property Tax</span></label><input type="number" id="p_propertyTax" value="1" step="0.1"><span class="unit">%</span></div>
+                    <div class="field"><label>销售税免税年限 <span class="en">Sales Tax Exempt</span></label><input type="number" id="p_salesTaxExemptYears" value="10" step="1"><span class="unit">年</span></div>
+                    <div class="field"><label>城建税率 <span class="en">City Tax</span></label><input type="number" id="p_cityConstrTax" value="0" step="0.1"><span class="unit">%</span></div>
+                    <div class="field"><label>教育附加费率 <span class="en">Edu Surcharge</span></label><input type="number" id="p_eduSurcharge" value="0" step="0.1"><span class="unit">%</span></div>
+                    <div class="field"><label>预提税 <span class="en">Withholding Tax</span></label><input type="number" id="p_withholdingTax" value="5" step="0.1"><span class="unit">%</span></div>
+                    <div class="field"><label>房产税率 <span class="en">Property Tax</span></label><input type="number" id="p_propertyTax" value="0" step="0.1"><span class="unit">%</span></div>
                     <div class="field"><label>所得税率 <span class="en">Income Tax</span></label><input type="number" id="p_incomeTax" value="10" step="0.5"><span class="unit">%</span></div>
                     <div class="field"><label>海域使用费 <span class="en">Sea Area Fee</span></label><input type="number" id="p_seaAreaFee" value="0" step="1"><span class="unit">10K CNY/yr</span></div>
                     <div class="field"><label>到期拆除费比例 <span class="en">Decomm. Ratio</span></label><input type="number" id="p_decommRatio" value="0" step="0.01"><span class="unit">%</span></div>
@@ -1258,7 +1271,7 @@
                     </div>
                     <div style="grid-column:1/-1;display:grid;grid-template-columns:repeat(5,1fr);gap:5px">
                         <div class="field"><label>行业无杠杆β β<sub>u</sub> <span class="en">Unlevered Beta</span></label><input type="number" id="p_betaU" value="0.4" step="0.01"><span class="unit"></span></div>
-                        <div class="field"><label>无风险利率 r<sub>RF</sub> <span class="en">Risk-Free · RMB 10Y</span></label><input type="number" id="p_riskFreeRate" value="1.7" step="0.1"><span class="unit">%</span></div>
+                        <div class="field"><label>无风险利率 r<sub>RF</sub>（海外取美元10Y）<span class="en">Risk-Free · USD 10Y (overseas) / RMB 10Y (domestic)</span></label><input type="number" id="p_riskFreeRate" value="5" step="0.1"><span class="unit">%</span></div>
                         <div class="field"><label>股权风险溢价 ERP <span class="en">Equity Risk Premium</span></label><input type="number" id="p_erp" value="5" step="0.5"><span class="unit">%</span></div>
                         <div class="field"><label>国家风险溢价 CRP <span class="en">Country Risk Premium</span></label><input type="number" id="p_crp" value="5.4" step="0.1"><span class="unit">%</span></div>
                         <div class="field"><label>债务成本 R<sub>d</sub> <span class="en">Cost of Debt · RMB</span></label><input type="number" id="p_waccRd" value="4.5" step="0.1"><span class="unit">%</span></div>
@@ -1298,14 +1311,14 @@
                     </div>
                     <div class="field" style="grid-column:1/-1;background:#fffdf5;border-radius:4px;padding:6px 8px;border:1px solid #e8ddb8;margin-top:2px">
                         <div style="font-size:0.62rem;color:#5a7a6a;line-height:1.5">
-                            <div style="font-weight:700;color:#8a6d1a;margin-bottom:3px">💰 美元融资(基准·主表) vs 全人民币融资 <span class="en" style="font-weight:400">USD Base vs All-RMB Financing</span></div>
+                            <div style="font-weight:700;color:#8a6d1a;margin-bottom:3px">💰 美元 vs 人民币 参照 <span class="en" style="font-weight:400">USD vs RMB Reference</span></div>
                             <table style="width:100%;border-collapse:collapse;font-size:0.62rem">
-                                <tr><td style="padding:1px 4px;color:#5a7a8a">无风险利率 rRF</td><td style="text-align:right;padding:1px 4px">4.70%</td><td style="text-align:right;padding:1px 4px;color:#0d7c3f;font-weight:700">1.70%</td></tr>
-                                <tr><td style="padding:1px 4px;color:#5a7a8a">再杠杆β βL</td><td style="text-align:right;padding:1px 4px">1.24</td><td style="text-align:right;padding:1px 4px;color:#0d7c3f;font-weight:700">1.24</td></tr>
-                                <tr><td style="padding:1px 4px;color:#5a7a8a">权益成本 Re</td><td style="text-align:right;padding:1px 4px">16.30%</td><td style="text-align:right;padding:1px 4px;color:#0d7c3f;font-weight:700">13.30%</td></tr>
-                                <tr><td style="padding:1px 4px;color:#5a7a8a">债务成本 Rd</td><td style="text-align:right;padding:1px 4px">7.00%</td><td style="text-align:right;padding:1px 4px;color:#0d7c3f;font-weight:700">4.50%</td></tr>
-                                <tr><td style="padding:1px 4px;color:#5a7a8a">税后债务成本 Rd×(1−Tc)</td><td style="text-align:right;padding:1px 4px">6.30%</td><td style="text-align:right;padding:1px 4px;color:#0d7c3f;font-weight:700">4.05%</td></tr>
-                                <tr><td style="padding:1px 4px;color:#8a6d1a;font-weight:700">WACC ★</td><td style="text-align:right;padding:1px 4px;color:#b8860b;font-weight:700">9.30%</td><td style="text-align:right;padding:1px 4px;color:#0d7c3f;font-weight:700">6.83%</td></tr>
+                                <tr><td style="padding:1px 4px;color:#5a7a8a">无风险利率 rRF</td><td style="text-align:right;padding:1px 4px;color:#0d7c3f;font-weight:700" id="waccCmpRfA">—</td><td style="text-align:right;padding:1px 4px;color:#5a7a8a;font-weight:700" id="waccCmpRfB">1.70%</td></tr>
+                                <tr><td style="padding:1px 4px;color:#5a7a8a">再杠杆β βL</td><td style="text-align:right;padding:1px 4px;color:#0d7c3f;font-weight:700" id="waccCmpBlA">—</td><td style="text-align:right;padding:1px 4px;color:#5a7a8a;font-weight:700" id="waccCmpBlB">—</td></tr>
+                                <tr><td style="padding:1px 4px;color:#5a7a8a">权益成本 Re</td><td style="text-align:right;padding:1px 4px;color:#0d7c3f;font-weight:700" id="waccCmpReA">—</td><td style="text-align:right;padding:1px 4px;color:#5a7a8a;font-weight:700" id="waccCmpReB">—</td></tr>
+                                <tr><td style="padding:1px 4px;color:#5a7a8a">债务成本 Rd</td><td style="text-align:right;padding:1px 4px;color:#0d7c3f;font-weight:700" id="waccCmpRdA">—</td><td style="text-align:right;padding:1px 4px;color:#5a7a8a;font-weight:700" id="waccCmpRdB">—</td></tr>
+                                <tr><td style="padding:1px 4px;color:#5a7a8a">税后债务成本 Rd×(1−Tc)</td><td style="text-align:right;padding:1px 4px;color:#0d7c3f;font-weight:700" id="waccCmpRdAtA">—</td><td style="text-align:right;padding:1px 4px;color:#5a7a8a;font-weight:700" id="waccCmpRdAtB">—</td></tr>
+                                <tr><td style="padding:1px 4px;color:#8a6d1a;font-weight:700">WACC ★</td><td style="text-align:right;padding:1px 4px;color:#b8860b;font-weight:700" id="waccCmpWaccA">—</td><td style="text-align:right;padding:1px 4px;color:#5a7a8a;font-weight:700" id="waccCmpWaccB">—</td></tr>
                             </table>
                         </div>
                     </div>
@@ -1317,7 +1330,7 @@
                     <div class="field"><label>占地面积 <span class="en">Land Area</span></label><input type="number" id="p_landArea" value="1232.7" step="0.1"><span class="unit">公顷 ha</span></div>
                     <div class="field"><label>年租金 <span class="en">Annual Rent</span></label><input type="number" id="p_annualRent" value="180" step="1"><span class="unit">USD/公顷 USD/ha</span></div>
                     <div class="field"><label>征地补偿 <span class="en">Land Comp</span></label><input type="number" id="p_landCompensation" value="272" step="1"><span class="unit">USD/公顷 USD/ha</span></div>
-                    <div class="field"><label>汇率 <span class="en">Exchange Rate</span></label><input type="number" id="p_exchangeRate" value="7.2" step="0.1"><span class="unit">US$/￥ (CNY/USD)</span></div>
+                    <div class="field"><label>汇率 <span class="en">Exchange Rate</span></label><input type="number" id="p_exchangeRate" value="7" step="0.1"><span class="unit">US$/￥ (CNY/USD)</span></div>
                     <div class="computed-3col">
                         <div class="field computed"><label>土地补偿款 <span class="en">Total Land Comp</span></label><span class="disp-value" id="cv_landCompTotal">计算中...</span><span class="unit">10K CNY</span></div>
                     </div>
@@ -1736,7 +1749,18 @@
                 c = 1 - e.equityRatio,
                 p = e.incomeTax,
                 d = e => document.getElementById(e);
-            d("waccDisplay") && (d("waccDisplay").textContent = (100 * l).toFixed(2) + "%"), d("waccBlDisplay") && (d("waccBlDisplay").textContent = waccBetaL.toFixed(2)), d("waccReDisplay") && (d("waccReDisplay").textContent = (100 * o).toFixed(2) + "%"), d("waccRdAtDisplay") && (d("waccRdAtDisplay").textContent = (100 * r * (1 - p)).toFixed(2) + "%"), d("waccEvDisplay") && (d("waccEvDisplay").textContent = (100 * i).toFixed(0) + "%"), d("waccDvDisplay") && (d("waccDvDisplay").textContent = (100 * c).toFixed(0) + "%"), d("waccTcDisplay") && (d("waccTcDisplay").textContent = (100 * p).toFixed(0) + "%"), renderWaccSensitivity();
+            d("waccDisplay") && (d("waccDisplay").textContent = (100 * l).toFixed(2) + "%"), d("waccBlDisplay") && (d("waccBlDisplay").textContent = waccBetaL.toFixed(2)), d("waccReDisplay") && (d("waccReDisplay").textContent = (100 * o).toFixed(2) + "%"), d("waccRdAtDisplay") && (d("waccRdAtDisplay").textContent = (100 * r * (1 - p)).toFixed(2) + "%"), d("waccEvDisplay") && (d("waccEvDisplay").textContent = (100 * i).toFixed(0) + "%"), d("waccDvDisplay") && (d("waccDvDisplay").textContent = (100 * c).toFixed(0) + "%"), d("waccTcDisplay") && (d("waccTcDisplay").textContent = (100 * p).toFixed(0) + "%"),
+                function() {
+                    const rfB = .017, reB = rfB + waccBetaL * e.erp + e.crp, waccB = i * reB + c * r * (1 - p),
+                        F = v => (100 * v).toFixed(2) + "%",
+                        S = (id, t) => { const n = d(id); n && (n.textContent = t) };
+                    S("waccCmpRfA", F(e.riskFreeRate)), S("waccCmpRfB", F(rfB)),
+                    S("waccCmpBlA", waccBetaL.toFixed(2)), S("waccCmpBlB", waccBetaL.toFixed(2)),
+                    S("waccCmpReA", F(o)), S("waccCmpReB", F(reB)),
+                    S("waccCmpRdA", F(r)), S("waccCmpRdB", F(r)),
+                    S("waccCmpRdAtA", F(r * (1 - p))), S("waccCmpRdAtB", F(r * (1 - p))),
+                    S("waccCmpWaccA", F(l)), S("waccCmpWaccB", F(waccB))
+                }(), renderWaccSensitivity();
             const f = 1e4 * e.dcCap,
                 g = 1e4 * e.acCap * e.storageRatio,
                 u = g * e.storageDuration * 1e3,
@@ -2017,7 +2041,7 @@
                 jt = te.reduce((e, t, a) => e + (a > 0 ? t : 0), 0) / a,
                 Vt = De.reduce((e, t, a) => e + (a > 0 ? t : 0), 0) / a,
                 Xt = Vt / P,
-                Wt = Oe[t] || 0,
+                Wt = L,
                 Kt = Ne.reduce((e, t, a) => e + (a > 0 ? t : 0), 0) / a,
                 Ut = He.reduce((e, t, a) => e + (a > 0 ? t : 0), 0) / a + Ye.reduce((e, t, a) => e + (a > 0 ? t : 0), 0) / a,
                 Gt = P > 0 ? (Kt + Ut) / P : 0,
@@ -2028,8 +2052,8 @@
                 document.getElementById("cv_staffCount").textContent = Math.round(Ie + Math.ceil(t)).toString(), document.getElementById("cv_totalLoan").textContent = Jt(k), document.getElementById("cv_fixedAssets").textContent = Jt(N), document.getElementById("cv_investPerKw").textContent = (P / f * 1e4).toFixed(0), document.getElementById("cv_landCompTotal").textContent = (e.landArea * e.landCompensation * e.exchangeRate / 1e4).toFixed(1)
             }
             const Qt = e => (100 * e).toFixed(2) + "%",
-                Zt = e => Math.abs(e) >= 1e4 ? (e / 1e4).toFixed(2) + " 100M" : e.toFixed(2) + " 10K";
-            document.getElementById("metrics").innerHTML = `\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card">\n <div class="label">总投资 <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Total Investment</span> (${(P/e.dcCap/1e3).toFixed(2)} <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">CNY/Wp</span>)</div>\n <div class="value gold">${Zt(P)}</div>\n <div class="sub"><span class="en">Loan</span> ${Zt(k)} &nbsp;|&nbsp; <span class="en">Equity</span> ${Zt(A)}</div>\n </div>\n <div class="metric-card">\n <div class="label">LCOE <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Levelized Cost</span></div>\n <div class="value">${qt.toFixed(4)}</div>\n <div class="sub"><span class="en">CNY/kWh</span> &nbsp;|&nbsp; WACC ${Qt(l)} &nbsp;|&nbsp; <span class="en">Avg Annual Rev.</span> ${Zt(jt)}</div>\n </div>\n </div>\n <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">\n <div class="metric-card project">\n <div class="label">全投资IRR <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Project IRR</span></div>\n <div class="value">${Qt(Mt)} <span style="font-size:0.75rem;color:#4a7a7a">税后 <span class="en" style="font-weight:400;font-size:0.55rem;color:#6a8a9a">Post-tax</span></span></div>\n <div class="sub"><span class="en">Pre-tax</span> ${Qt(Et)}</div>\n </div>\n <div class="metric-card equity">\n <div class="label">资本金IRR <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Equity IRR</span></div>\n <div class="value">${Qt(Tt)} <span style="font-size:0.75rem;color:#4a7a7a">税后 <span class="en" style="font-weight:400;font-size:0.55rem;color:#6a8a9a">Post-tax</span></span></div>\n <div class="sub"><span class="en">Pre-tax</span> ${Qt(Pt)}</div>\n </div>\n <div class="metric-card project">\n <div class="label">全投资NPV <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Project NPV</span></div>\n <div class="value">${Zt(Ft)}</div>\n <div class="sub"><span class="en">10K CNY</span> &nbsp;|&nbsp; <span class="en">WACC</span> ${Qt(l)}</div>\n </div>\n <div class="metric-card equity">\n <div class="label">资本金NPV <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Equity NPV</span></div>\n <div class="value">${Zt(St)}</div>\n <div class="sub"><span class="en">10K CNY</span> &nbsp;|&nbsp; <span class="en">WACC</span> ${Qt(l)}</div>\n </div>\n </div>\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card project">\n <div class="label">全投资回收期 <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Project Payback</span></div>\n <div class="value">${At.toFixed(2)} <span style="font-size:0.7rem;color:#4a7a7a"><span class="en">Year(s)</span></span></div>\n <div class="sub"><span class="en">Incl. Construction</span> ${e.constructPeriod}<span class="en">yr(s)</span></div>\n </div>\n <div class="metric-card equity">\n <div class="label">资本金回收期 <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Equity Payback</span></div>\n <div class="value">${kt.toFixed(2)} <span style="font-size:0.7rem;color:#4a7a7a"><span class="en">Year(s)</span></span></div>\n <div class="sub"><span class="en">Incl. Construction</span> ${e.constructPeriod}<span class="en">yr(s)</span></div>\n </div>\n </div>\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card">\n <div class="label">平均年收入 <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Avg Annual Revenue</span></div>\n <div class="value">${Zt(jt)}</div>\n <div class="sub"><span class="en">Average over</span> ${a} <span class="en">years</span></div>\n </div>\n <div class="metric-card">\n <div class="label">平均年净利润 <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Avg Annual Net Profit</span></div>\n <div class="value">${Zt(Vt)}</div>\n <div class="sub"><span class="en">Avg Net Profit Rate</span> ${Qt(Vt/(jt>0?jt:1))}</div>\n </div>\n </div>\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card project">\n <div class="label">建设期利息 <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Constr. Period Interest</span></div>\n <div class="value">${Zt(Wt)}</div>\n <div class="sub"><span class="en">Capitalized during</span> ${e.constructPeriod}<span class="en">yr(s)</span></div>\n </div>\n <div class="metric-card equity">\n <div class="label">总投资收益率ROI <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Return on Investment</span></div>\n <div class="value">${Qt(Xt)}</div>\n <div class="sub"><span class="en">Avg Net Profit / Total Invest</span></div>\n </div>\n </div>\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card project">\n <div class="label">投资利税率 <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Profit & Tax Rate</span></div>\n <div class="value">${Qt(Gt)}</div>\n <div class="sub"><span class="en">(Avg Profit + Avg Tax) / Total Invest</span></div>\n </div>\n <div class="metric-card equity">\n <div class="label">平均净资产收益率ROE <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Avg ROE</span></div>\n <div class="value">${Qt(It)}</div>\n <div class="sub"><span class="en">Avg Net Profit / Avg Equity</span></div>\n </div>\n </div>\n `;
+                Zt = e => Math.abs(e) >= 1e4 ? (e / 1e4).toFixed(2) + ' <span class="mag">100M</span>' : e.toFixed(2) + ' <span class="mag">10K</span>';
+            document.getElementById("metrics").innerHTML = `\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card">\n <div class="label">总投资 <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Total Investment</span> (${(P/e.dcCap/1e3).toFixed(2)} <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">CNY/Wp</span>)</div>\n <div class="value gold">${Zt(P)}</div>\n <div class="sub"><span class="en">Loan</span> ${Zt(k)} &nbsp;|&nbsp; <span class="en">Equity</span> ${Zt(A)}</div>\n </div>\n <div class="metric-card">\n <div class="label">LCOE <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Levelized Cost of Electricity</span></div>\n <div class="value">${qt.toFixed(4)} <span style="font-size:0.72rem;font-weight:400;color:#4a6a7a">CNY/kWh</span></div>\n <div class="sub"><span class="en">Discount rate (WACC)</span> ${Qt(l)}</div>\n </div>\n </div>\n <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">\n <div class="metric-card project">\n <div class="label">全投资IRR <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Project IRR</span></div>\n <div class="value">${Qt(Mt)} <span style="font-size:0.75rem;color:#4a7a7a">税后 <span class="en" style="font-weight:400;font-size:0.55rem;color:#6a8a9a">Post-tax</span></span></div>\n <div class="sub"><span class="en">Pre-tax</span> ${Qt(Et)}</div>\n </div>\n <div class="metric-card equity">\n <div class="label">资本金IRR <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Equity IRR</span></div>\n <div class="value">${Qt(Tt)} <span style="font-size:0.75rem;color:#4a7a7a">税后 <span class="en" style="font-weight:400;font-size:0.55rem;color:#6a8a9a">Post-tax</span></span></div>\n <div class="sub"><span class="en">Pre-tax</span> ${Qt(Pt)}</div>\n </div>\n <div class="metric-card project">\n <div class="label">全投资NPV <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Project NPV</span></div>\n <div class="value">${Zt(Ft)}</div>\n <div class="sub"><span class="en">${Math.abs(Ft) >= 1e4 ? "100M CNY" : "10K CNY"}</span> &nbsp;|&nbsp; <span class="en">WACC</span> ${Qt(l)}</div>\n </div>\n <div class="metric-card equity">\n <div class="label">资本金NPV <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Equity NPV</span></div>\n <div class="value">${Zt(St)}</div>\n <div class="sub"><span class="en">${Math.abs(St) >= 1e4 ? "100M CNY" : "10K CNY"}</span> &nbsp;|&nbsp; <span class="en">WACC</span> ${Qt(l)}</div>\n </div>\n </div>\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card project">\n <div class="label">全投资回收期 <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Project Payback</span></div>\n <div class="value">${At.toFixed(2)} <span style="font-size:0.7rem;color:#4a7a7a"><span class="en">Year(s)</span></span></div>\n <div class="sub"><span class="en">Incl. Construction</span> ${e.constructPeriod}<span class="en">yr(s)</span></div>\n </div>\n <div class="metric-card equity">\n <div class="label">资本金回收期 <span class="en" style="font-weight:400;font-size:0.6rem;color:#4a7a7a">Equity Payback</span></div>\n <div class="value">${kt.toFixed(2)} <span style="font-size:0.7rem;color:#4a7a7a"><span class="en">Year(s)</span></span></div>\n <div class="sub"><span class="en">Incl. Construction</span> ${e.constructPeriod}<span class="en">yr(s)</span></div>\n </div>\n </div>\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card">\n <div class="label">平均年收入 <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Avg Annual Revenue</span></div>\n <div class="value">${Zt(jt)}</div>\n <div class="sub"><span class="en">Average over</span> ${a} <span class="en">years</span></div>\n </div>\n <div class="metric-card">\n <div class="label">平均年净利润 <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Avg Annual Net Profit</span></div>\n <div class="value">${Zt(Vt)}</div>\n <div class="sub"><span class="en">Avg Net Profit Rate</span> ${Qt(Vt/(jt>0?jt:1))}</div>\n </div>\n </div>\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card project">\n <div class="label">建设期利息 <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Constr. Period Interest</span></div>\n <div class="value">${Zt(Wt)}</div>\n <div class="sub"><span class="en">Capitalized during</span> ${e.constructPeriod}<span class="en">yr(s)</span></div>\n </div>\n <div class="metric-card equity">\n <div class="label">总投资收益率ROI <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Return on Investment</span></div>\n <div class="value">${Qt(Xt)}</div>\n <div class="sub"><span class="en">Avg Net Profit / Total Invest</span></div>\n </div>\n </div>\n <div style="display:flex;flex-direction:column;gap:6px">\n <div class="metric-card project">\n <div class="label">投资利税率 <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Profit & Tax Rate</span></div>\n <div class="value">${Qt(Gt)}</div>\n <div class="sub"><span class="en">(Avg Profit + Avg Tax) / Total Invest</span></div>\n </div>\n <div class="metric-card equity">\n <div class="label">平均净资产收益率ROE <span class="en" style="font-weight:400;font-size:0.7rem;color:#4a7a7a">Avg ROE</span></div>\n <div class="value">${Qt(It)}</div>\n <div class="sub"><span class="en">Avg Net Profit / Avg Equity</span></div>\n </div>\n </div>\n `;
             const ea = e => Math.abs(e) >= 1 ? e.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") : e.toFixed(4),
                 ta = [{
                     label: "项目总投资 Total Investment",
@@ -3222,7 +3246,7 @@
             }
         }, document.addEventListener("DOMContentLoaded", () => {
             try {
-                const e = "7";
+                const e = "8";
                 localStorage.getItem("modelFormVersion") !== e && (localStorage.removeItem("modelFormState"), localStorage.setItem("modelFormVersion", e)), restoreFormState(),
                     function() {
                         const e = document.getElementById("p_projectName"),
