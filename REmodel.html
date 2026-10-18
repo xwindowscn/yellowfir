@@ -1148,13 +1148,197 @@
         .tab-output th input {
             background: inherit
         }
+
+        /* 體驗版 Trial */
+        .trial-banner {
+            margin: 8px 0 4px;
+            padding: 8px 10px;
+            border: 1px solid #f0c36d;
+            border-radius: 6px;
+            background: #fff8e8;
+            color: #6b4e12;
+            font-size: 0.68rem;
+            line-height: 1.55;
+        }
+
+        .trial-banner b {
+            color: #8a5a00
+        }
+
+        .trial-banner a {
+            display: inline-block;
+            margin-top: 4px;
+            color: #0d7c3f;
+            font-weight: 700;
+            text-decoration: none
+        }
+
+        .trial-banner a:hover {
+            text-decoration: underline
+        }
+
+        .trial-locked {
+            opacity: .62;
+            cursor: not-allowed !important
+        }
+
+        #trialToast {
+            position: fixed;
+            left: 50%;
+            bottom: 28px;
+            transform: translateX(-50%) translateY(12px);
+            background: #16324f;
+            color: #fff;
+            font-size: 0.76rem;
+            line-height: 1.5;
+            padding: 10px 16px;
+            border-radius: 8px;
+            box-shadow: 0 6px 24px rgba(8, 22, 36, .35);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .18s, transform .18s;
+            z-index: 10001;
+            max-width: min(92vw, 520px);
+            text-align: center;
+        }
+
+        #trialToast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0)
+        }
+
+        #trialToast a {
+            color: #7ce0a8;
+            font-weight: 700
+        }
+
+        #trialModal {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(8, 22, 36, .55);
+            backdrop-filter: blur(2px)
+        }
+
+        #trialModal.hidden {
+            display: none
+        }
+
+        .trial-dialog {
+            width: 100%;
+            max-width: 540px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 24px 60px rgba(8, 22, 36, .35);
+            padding: 24px 26px 18px;
+            max-height: 88vh;
+            overflow: auto
+        }
+
+        .trial-dialog h2 {
+            margin: 0 0 4px;
+            font-size: 1.12rem;
+            color: #16324f
+        }
+
+        .trial-dialog h2 span {
+            font-size: 0.72rem;
+            font-weight: 400;
+            color: #5b6b7c;
+            margin-left: 6px
+        }
+
+        .trial-dialog p {
+            margin: 10px 0;
+            font-size: 0.8rem;
+            line-height: 1.7;
+            color: #2b3f52
+        }
+
+        .trial-dialog p.en {
+            font-size: 0.72rem;
+            color: #5b6b7c
+        }
+
+        .trial-dialog .trial-list {
+            margin: 10px 0;
+            padding: 10px 14px;
+            background: #f6f9fc;
+            border: 1px solid #dce3ec;
+            border-radius: 8px;
+            font-size: 0.78rem;
+            line-height: 1.8;
+            color: #2b3f52
+        }
+
+        .trial-dialog .trial-list .lk {
+            color: #a05a00;
+            font-weight: 600
+        }
+
+        .trial-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 16px
+        }
+
+        .trial-btn {
+            flex: 1 1 200px;
+            display: block;
+            text-align: center;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 650;
+            font-family: inherit;
+            cursor: pointer;
+            text-decoration: none;
+            border: none
+        }
+
+        .trial-btn span {
+            display: block;
+            font-size: 0.66rem;
+            font-weight: 400;
+            opacity: .8
+        }
+
+        .trial-btn.primary {
+            background: linear-gradient(135deg, #27ae60, #1e8c4a);
+            color: #fff
+        }
+
+        .trial-btn.ghost {
+            background: #f0f4f8;
+            color: #2b4b5c;
+            border: 1px solid #c8d6e5
+        }
+
+        .trial-foot {
+            margin-top: 14px;
+            padding-top: 10px;
+            border-top: 1px solid #e4ebf2;
+            font-size: 0.66rem;
+            color: #6b7c8f;
+            text-align: center
+        }
+
+        .trial-foot a {
+            color: #4a6b82
+        }
     </style>
 </head>
 
 <body>
     <div class="app">
         <div class="left-panel" id="leftPanel">
-            <h1>📊 光伏/风电财务模型 <span style="font-size:0.72rem;color:#2e5454;font-weight:400">PV/Wind Financial Model</span><span style="font-size:0.6rem;color:#c0392b;font-weight:400;margin-left:6px">v4</span></h1>
+            <h1>📊 光伏/风电财务模型 <span style="font-size:0.72rem;color:#2e5454;font-weight:400">PV/Wind Financial Model</span><span style="font-size:0.6rem;color:#c0392b;font-weight:400;margin-left:6px">v4 · 體驗版 Trial</span></h1>
+            <div class="trial-banner">🔒 <b>體驗版 Trial</b>：僅可編輯第 <b>1</b>、<b>2</b> 組參數（工程概況、電價參數），其餘參數已鎖定。<br>Only parameter groups <b>1</b> and <b>2</b> are editable in this web trial; everything else is locked.<br><a href="https://www.yellowfir.com/res-financial-model.html" target="_blank" rel="noopener">⬇️ 下載完整版軟件 Download the full desktop version →</a></div>
             <div class="section s1">
                 <div class="section-header"><span>📐 <span class="section-num">1</span>工程概况 <span class="en" style="font-weight:400;font-size:0.65rem">Project Overview</span></span><span class="arrow">▼</span></div>
                 <div class="section-body">
@@ -4019,6 +4203,115 @@ const SECTOR_BU = {"Advertising":0.98,"Aerospace/Defense":1.12,"Air Transport":0
                 scheduleWaccAutoRefresh(),
                 setTimeout(() => { try { refreshWaccData(true) } catch (e) {} }, 600)
         });
+    </script>
+
+    <div id="trialModal" class="hidden" role="dialog" aria-modal="true" aria-labelledby="trialTitle">
+        <div class="trial-dialog">
+            <h2 id="trialTitle">歡迎體驗 · 網頁版說明 <span>Welcome — Web Trial</span></h2>
+            <p>本網頁為 <b>體驗版</b>，僅可編輯左側參數中的 <b>第 1 組「工程概況」</b> 與 <b>第 2 組「電價參數」</b>。</p>
+            <div class="trial-list">
+                ✅ 可編輯：1 工程概況 · 2 電價參數<br>
+                <span class="lk">🔒 已鎖定：3 儲能參數 · 4 運維參數 · 5 稅費參數 · 6–8 融資及 WACC 等全部其餘參數</span>
+            </div>
+            <p>其餘參數無法編輯，但全部測算結果（含現金流、收益指標、LCOE、WACC 等）仍會隨您修改的前兩組參數即時重算，供您評估模型效果。</p>
+            <p>如需編輯全部參數並使用完整功能，<b>請下載桌面軟件使用</b>。</p>
+            <p class="en">This web page is a trial: only parameter groups 1 (Project Overview) and 2 (Tariff Parameters) are editable. All other parameters are locked. Results are recalculated live. For full functionality, please download the desktop app.</p>
+            <div class="trial-actions">
+                <a class="trial-btn primary" href="https://www.yellowfir.com/res-financial-model.html" target="_blank" rel="noopener">⬇️ 下載完整版軟件<span>Download the Full Version</span></a>
+                <button class="trial-btn ghost" type="button" id="trialContinue">先體驗一下<span>Continue with the Trial</span></button>
+            </div>
+            <div class="trial-foot">Yellowfir Group Limited (Hong Kong) · <a href="https://www.yellowfir.com/terms.html" target="_blank" rel="noopener">Terms 條款</a> · <a href="https://www.yellowfir.com/refund.html" target="_blank" rel="noopener">Refund 退款</a> · <a href="https://www.yellowfir.com/privacy.html" target="_blank" rel="noopener">Privacy 隱私</a></div>
+        </div>
+    </div>
+    <div id="trialToast">🔒 該參數在體驗版中不可編輯。如需完整功能，請 <a href="https://www.yellowfir.com/res-financial-model.html" target="_blank" rel="noopener">下載桌面軟件</a>。</div>
+
+    <script>
+        (function() {
+            "use strict";
+            var EDITABLE = "#leftPanel .section.s1, #leftPanel .section.s2";
+
+            function isEditable(el) {
+                return !!(el.closest && el.closest(EDITABLE));
+            }
+
+            function lock(el) {
+                if (el.closest("#trialModal")) return;
+                if (el.type === "hidden" || el.tagName === "OPTION") return;
+                if (isEditable(el)) return;
+                if (el.tagName === "SELECT") {
+                    if (!el.disabled) el.disabled = true;
+                } else if (!el.readOnly) {
+                    el.readOnly = true;
+                }
+                el.classList.add("trial-locked");
+                el.setAttribute("aria-disabled", "true");
+                el.setAttribute("title", "體驗版已鎖定，完整版請下載桌面軟件");
+            }
+
+            function lockAll() {
+                document.querySelectorAll("input, select, textarea").forEach(lock);
+            }
+
+            var toastTimer = null;
+
+            function showToast() {
+                var t = document.getElementById("trialToast");
+                if (!t) return;
+                t.classList.add("show");
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(function() {
+                    t.classList.remove("show");
+                }, 2600);
+            }
+
+            function openModal() {
+                var m = document.getElementById("trialModal");
+                if (m) m.classList.remove("hidden");
+            }
+
+            function closeModal() {
+                var m = document.getElementById("trialModal");
+                if (m) m.classList.add("hidden");
+            }
+
+            document.addEventListener("click", function(e) {
+                if (e.target && e.target.id === "trialContinue") {
+                    closeModal();
+                    return;
+                }
+                var el = e.target;
+                if (el && el.closest && el.closest(".trial-locked")) showToast();
+            }, true);
+
+            document.addEventListener("focusin", function(e) {
+                var el = e.target;
+                if (el && el.closest && el.closest(".trial-locked")) showToast();
+            });
+
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", function() {
+                    lockAll();
+                    openModal();
+                });
+            } else {
+                lockAll();
+                openModal();
+            }
+
+            window.addEventListener("load", lockAll);
+
+            var pending = false;
+            new MutationObserver(function() {
+                if (pending) return;
+                pending = true;
+                setTimeout(function() {
+                    pending = false;
+                    lockAll();
+                }, 0);
+            }).observe(document.body, { childList: true, subtree: true });
+
+            window.__trialLockAll = lockAll;
+        })();
     </script>
 </body>
 
