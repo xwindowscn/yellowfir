@@ -117,10 +117,12 @@ footer a:hover{color:#00d084}
     <div class="actions">
       <a class="btn" href="downloads/RES-Financial-Model-3.1-macOS.dmg" download><i class="fas fa-download"></i>&nbsp; macOS（Apple 芯片 · 24 MB）<span class="en">macOS (Apple Silicon · 24 MB)</span></a>
       <a class="btn ghost" href="downloads/RES-Financial-Model-3.1-macOS-Intel.dmg" download><i class="fas fa-download"></i>&nbsp; macOS（Intel · 27 MB）<span class="en">macOS (Intel · 27 MB)</span></a>
+      <a class="btn ghost" href="downloads/RES-Financial-Model-Setup-3.1-Windows-x64.exe" download><i class="fas fa-download"></i>&nbsp; Windows（64 位 · 24 MB）<span class="en">Windows (64-bit · 24 MB)</span></a>
       <a class="btn ghost" href="#pricing">查看价格 Pricing</a>
       <span class="hint">免费试用 1 小时 · 无需注册即可开始<span class="en">1-hour free trial · no sign-up required</span></span>
     </div>
-    <p class="hint" style="margin-top:12px">系统要求：macOS 12 Monterey 或更高（Apple Silicon 与 Intel 各有对应安装包）。首次打开如提示"无法验证开发者"，请右键点击应用图标 → 选择"打开"。<span class="en">System requirements: macOS 12 Monterey or later — separate builds for Apple Silicon and Intel. If macOS reports that the developer cannot be verified on first launch, right-click the app icon → Open.</span></p>
+    <p class="hint" style="margin-top:12px">系统要求：macOS 12 Monterey 或更高（Apple Silicon 与 Intel 各有对应安装包）；Windows 10/11（64 位，需 WebView2 运行时，Windows 11 已内置）。首次打开若提示"无法验证开发者"：macOS 请右键点击应用图标 → 选择"打开"；Windows 在 SmartScreen 提示中点击"更多信息" → "仍要运行"。<span class="en">System requirements: macOS 12 Monterey or later — separate builds for Apple Silicon and Intel; Windows 10/11 (64-bit, WebView2 runtime required — built into Windows 11). On first launch, if the developer cannot be verified: on macOS, right-click the app icon → Open; on Windows, click "More info" → "Run anyway" in the SmartScreen prompt.</span></p>
+    <p class="hint">Windows 免安装版：<a href="downloads/RES-Financial-Model-3.1-Windows-x64.zip" download>下载 ZIP（33 MB）</a>，解压后直接运行 RES Financial Model.exe。<span class="en">Portable Windows build: <a href="downloads/RES-Financial-Model-3.1-Windows-x64.zip" download>download the ZIP (33 MB)</a> and run RES Financial Model.exe after extracting.</span></p>
   </section>
 
   <section>
@@ -221,7 +223,7 @@ footer a:hover{color:#00d084}
   <section>
     <h2>使用流程 <span class="en">How it works</span></h2>
     <div class="steps">
-      <div class="step"><b>STEP 1</b><p>下载 DMG，双击安装并把应用拖入"应用程序"文件夹；首次打开时右键 → "打开"。<span class="en">Download the DMG, double-click to install and drag the app into Applications; on first launch, right-click → Open.</span></p></div>
+      <div class="step"><b>STEP 1</b><p>下载对应平台安装包：macOS 双击 DMG、把应用拖入"应用程序"文件夹；Windows 运行安装程序（或解压免安装版）。首次打开按上方提示允许运行。<span class="en">Download the build for your platform — double-click the DMG and drag the app into Applications on macOS, or run the installer (or extract the portable ZIP) on Windows. On first launch, allow it to run as described above.</span></p></div>
       <div class="step"><b>STEP 2</b><p>启动后自动获得累计 1 小时免费试用，期间可使用全部功能并导出报表。<span class="en">You get a cumulative 1-hour free trial automatically — all features and report export included.</span></p></div>
       <div class="step"><b>STEP 3</b><p>试用期内可随时在软件内选择授权时长并支付，付款后立即解锁正式使用，无需等到试用结束。<span class="en">You can buy at any point during the trial — choose a licence term and pay inside the app; it unlocks immediately, with no need to wait for the trial to end.</span></p></div>
       <div class="step"><b>STEP 4</b><p>授权绑定当前设备；更换电脑时请联系客服转移授权。<span class="en">The licence is bound to this device; to move to a new computer, contact support to transfer it.</span></p></div>
@@ -233,7 +235,7 @@ footer a:hover{color:#00d084}
     <div class="faq">
       <details>
         <summary>授权是绑定账号还是设备？<span class="en">Is the licence bound to an account or a device?</span></summary>
-        <p>授权绑定设备（基于设备硬件标识匿名生成，不含个人信息）。同一台 Mac 重装系统后授权仍然有效；更换电脑请联系 yellowfir@yellowfir.com 办理转移。<span class="en">The licence is bound to a device, using an anonymous hash derived from hardware identifiers — no personal data is involved. It survives a macOS reinstall on the same Mac; to move to another computer, contact yellowfir@yellowfir.com for a transfer.</span></p>
+        <p>授权绑定设备（基于设备硬件标识匿名生成，不含个人信息）。同一台电脑重装系统后授权仍然有效；更换电脑请联系 yellowfir@yellowfir.com 办理转移。<span class="en">The licence is bound to a device, using an anonymous hash derived from hardware identifiers — no personal data is involved. It survives an OS reinstall on the same computer; to move to another computer, contact yellowfir@yellowfir.com for a transfer.</span></p>
       </details>
       <details>
         <summary>需要联网吗？<span class="en">Does it need an internet connection?</span></summary>
@@ -245,7 +247,7 @@ footer a:hover{color:#00d084}
       </details>
       <details>
         <summary>支持哪些平台？<span class="en">Which platforms are supported?</span></summary>
-        <p>当前提供 Apple Silicon（M 系列）与 Intel Mac 两个安装包，均要求 macOS 12 Monterey 或更高。Windows 版本可按需定制，请联系 yellowfir@yellowfir.com。<span class="en">Two macOS builds are available — Apple Silicon (M-series) and Intel — both requiring macOS 12 Monterey or later. A Windows build can be customised on request; contact yellowfir@yellowfir.com.</span></p>
+        <p>同时提供 Apple Silicon 与 Intel 两个 macOS 安装包（macOS 12 Monterey 或更高），以及 Windows 10/11 64 位安装包（需 WebView2 运行时，Windows 11 已内置）。三个安装包功能一致、授权互通，按当前设备绑定。<span class="en">Three builds are available: Apple Silicon and Intel for macOS 12 Monterey or later, plus a Windows 10/11 64-bit build (WebView2 runtime required — built into Windows 11). All three are feature-identical, share the same licensing, and bind to the current device.</span></p>
       </details>
       <details>
         <summary>导出的 Excel 可以做什么？<span class="en">What can I do with the exported Excel?</span></summary>
