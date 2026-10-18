@@ -56,6 +56,10 @@ table.pricing th{background:rgba(0,208,132,.1);color:#9ff0ce;font-weight:600;fon
 table.pricing tr:last-child td{border-bottom:none}
 table.pricing td.price{color:#00d084;font-weight:700;white-space:nowrap}
 table.pricing tr.best td{background:rgba(0,208,132,.06)}
+table.pricing th.buy,table.pricing td.buy{text-align:right;white-space:nowrap}
+a.buy-btn{display:inline-block;background:#00d084;color:#061a14;padding:7px 16px;border-radius:6px;text-decoration:none;font-weight:700;font-size:.82rem;transition:background .2s}
+a.buy-btn:hover{background:#00e894}
+@media(max-width:640px){.pricing-wrap{overflow-x:auto}}
 .tag{display:inline-block;font-size:.7rem;background:#00d084;color:#062a20;border-radius:999px;padding:1px 8px;margin-left:8px;font-weight:700;vertical-align:middle}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
 .step{background:rgba(8,28,26,.5);border-left:3px solid #00d084;border-radius:8px;padding:16px 18px}
@@ -183,23 +187,25 @@ footer a:hover{color:#00d084}
   <section id="pricing">
     <h2>价格 <span class="en">Pricing</span></h2>
     <p class="sub">一次性付费，按设备授权，不自动续费。每台 Mac 可免费试用累计 1 小时；试用结束后可在软件内直接购买。价格以美元结算，由 Paddle 作为 Merchant of Record 收款并处理税费。</p>
+    <div class="pricing-wrap">
     <table class="pricing">
       <thead>
-        <tr><th>授权时长 License</th><th>价格 Price (USD)</th><th>适用场景 Best for</th></tr>
+        <tr><th>授权时长 License</th><th>价格 Price (USD)</th><th>适用场景 Best for</th><th class="buy">购买 Buy</th></tr>
       </thead>
       <tbody>
-        <tr><td>1 天 / 1 day</td><td class="price">$2</td><td>单次测算、快速验证 One-off calculation</td></tr>
-        <tr><td>7 天 / 7 days</td><td class="price">$5</td><td>短期尽调或投标 Short due diligence</td></tr>
-        <tr><td>1 月 / 1 month</td><td class="price">$7</td><td>项目前期论证 Project screening</td></tr>
-        <tr><td>3 月 / 3 months</td><td class="price">$12</td><td>可研与投资决策 Feasibility study</td></tr>
-        <tr><td>半年 / 6 months</td><td class="price">$20</td><td>交易推进期 Deal execution</td></tr>
-        <tr class="best"><td>一年 / 1 year <span class="tag">推荐</span></td><td class="price">$35</td><td>全年多项目使用 Year-round use</td></tr>
-        <tr class="best"><td>永久 / Lifetime</td><td class="price">$50</td><td>长期自用、不受期限限制 Permanent use</td></tr>
+        <tr><td>1 天 / 1 day</td><td class="price">$2</td><td>单次测算、快速验证 One-off calculation</td><td class="buy"><a class="buy-btn" href="https://license.resmodel.com/buy?plan=d1">购买 Buy</a></td></tr>
+        <tr><td>7 天 / 7 days</td><td class="price">$5</td><td>短期尽调或投标 Short due diligence</td><td class="buy"><a class="buy-btn" href="https://license.resmodel.com/buy?plan=d7">购买 Buy</a></td></tr>
+        <tr><td>1 月 / 1 month</td><td class="price">$7</td><td>项目前期论证 Project screening</td><td class="buy"><a class="buy-btn" href="https://license.resmodel.com/buy?plan=m1">购买 Buy</a></td></tr>
+        <tr><td>3 月 / 3 months</td><td class="price">$12</td><td>可研与投资决策 Feasibility study</td><td class="buy"><a class="buy-btn" href="https://license.resmodel.com/buy?plan=m3">购买 Buy</a></td></tr>
+        <tr><td>半年 / 6 months</td><td class="price">$20</td><td>交易推进期 Deal execution</td><td class="buy"><a class="buy-btn" href="https://license.resmodel.com/buy?plan=m6">购买 Buy</a></td></tr>
+        <tr class="best"><td>一年 / 1 year <span class="tag">推荐</span></td><td class="price">$35</td><td>全年多项目使用 Year-round use</td><td class="buy"><a class="buy-btn" href="https://license.resmodel.com/buy?plan=y1">购买 Buy</a></td></tr>
+        <tr class="best"><td>永久 / Lifetime</td><td class="price">$50</td><td>长期自用、不受期限限制 Permanent use</td><td class="buy"><a class="buy-btn" href="https://license.resmodel.com/buy?plan=life">购买 Buy</a></td></tr>
       </tbody>
     </table>
+    </div>
     <div class="note">
-      <b>购买方式：</b>下载并打开软件后，点击右上角"授权"即可看到与上表一致的价格并完成支付（支持银行卡、PayPal、Apple Pay、Google Pay 与微信支付）。支付完成后软件自动解锁，无需手动输入授权码。
-      <br><b>How to buy:</b> open the app and click the license button in the top-right corner. Payment is handled by Paddle (cards, PayPal, Apple Pay, Google Pay, WeChat Pay). The app unlocks automatically after payment.
+      <b>购买方式：</b>可直接点击上表「购买」在线支付；也可下载并打开软件后，点击右上角"授权"在软件内购买（价格一致）。支付由 Paddle 作为 Merchant of Record 处理（支持银行卡、PayPal、Apple Pay、Google Pay 与微信支付）。<b>网页购买后</b>，请在软件「恢复授权」中输入支付完成页显示的订单号解锁；<b>软件内购买</b>则自动解锁，无需输入订单号。
+      <br><b>How to buy:</b> click <b>Buy</b> in the table above, or open the app and click the license button in the top-right corner. Payment is handled by Paddle (cards, PayPal, Apple Pay, Google Pay, WeChat Pay). After a web purchase, paste the order number from the confirmation page into the app's <b>Restore</b> dialog; in-app purchases unlock automatically.
     </div>
   </section>
 
