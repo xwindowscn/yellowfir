@@ -810,7 +810,7 @@
   .shots img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top left;opacity:0;transition:opacity .7s ease;display:block}
   .shots img.on{opacity:1}
   .shots.is-book{aspect-ratio:16/11;background:rgba(0,0,0,.28)}
-  .shots.is-book img{object-fit:contain;padding:8px}
+  .shots.is-book img{object-fit:contain;padding:0}
   .shots .dots{position:absolute;left:0;right:0;bottom:8px;display:flex;justify-content:center;gap:6px;z-index:2;pointer-events:none}
   .shots .dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.32);transition:background .3s,width .3s;display:block}
   .shots .dots i.on{background:#fff;width:16px;border-radius:3px}
@@ -849,9 +849,11 @@
 
 
       <div style="background:rgba(201,154,46,.06);border:1px solid rgba(201,154,46,.32);border-radius:14px;padding:20px;display:flex;flex-direction:column;">
-        <a href="https://www.amazon.com/dp/B0H7HQ1MWG" target="_blank" rel="noopener noreferrer" style="display:block;"><div class="shots is-book" data-ms="5200" role="img" aria-label="美国税务筹划手册 封面">
-          <img class="on" src="software/book-01.jpg" alt="美国税务筹划手册 · 封面">
-          <img src="software/book-02.jpg" alt="美国税务筹划手册 · 封底">
+        <a href="https://www.amazon.com/dp/B0H7HQ1MWG" target="_blank" rel="noopener noreferrer" style="display:block;"><div class="shots is-book" data-ms="5600" role="img" aria-label="美国税务筹划手册 内页">
+          <img class="on" src="software/book-01.png" alt="美国税务筹划手册 · 封面与封底">
+          <img src="software/book-02.png" alt="美国税务筹划手册 · 目录（一）">
+          <img src="software/book-03.png" alt="美国税务筹划手册 · 前言与目录（二）">
+          <img src="software/book-04.png" alt="美国税务筹划手册 · 内文样页">
         </div></a>
         <h3 style="color:#d9b552;font-size:1.25rem;margin:0 0 8px;">美国税务筹划手册 · U.S. Tax Planning Handbook</h3>
         <p style="margin:0 0 8px;font-size:.94rem;">以实务视角贯通美国税制：个人所得税、公司税、跨境架构与合规申报，附计算示例与可落地的筹划路径。全面通达美国税务实务。</p>
